@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import heroImage from "../../public/hero.jpg";
 import { motion } from "framer-motion";
 import { PhoneCall, MessageCircle, Shield, Zap, User, Scale } from "lucide-react";
 
@@ -21,13 +23,26 @@ const features = [
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-[600px] flex items-center overflow-hidden mt-16"
-      style={{
-        background:
-          "linear-gradient(140deg, #0a3d2e 0%, #134d3e 35%, #1a6f5a 70%, #22896e 100%)",
-      }}
-    >
+    <section className="relative min-h-[600px] flex items-center overflow-hidden mt-16">
+      {/* Background image */}
+      <Image
+        src={heroImage}
+        alt="やま接骨院 院内・施術イメージ"
+        fill
+        className="object-cover object-center"
+        priority
+        quality={85}
+      />
+
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(140deg, rgba(10,61,46,0.92) 0%, rgba(19,77,62,0.87) 35%, rgba(26,111,90,0.82) 70%, rgba(34,137,110,0.78) 100%)",
+        }}
+      />
+
       {/* Subtle cross/plus pattern */}
       <div
         className="absolute inset-0 opacity-[0.05]"
@@ -97,7 +112,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             className="text-[clamp(28px,5vw,52px)] font-black leading-[1.3] mb-6 tracking-tight"
-            style={{ textShadow: "0 2px 16px rgba(0,0,0,0.25)" }}
+            style={{ textShadow: "0 2px 16px rgba(0,0,0,0.35)" }}
           >
             交通事故後の
             <span className="text-[#ffe066] relative">
@@ -120,6 +135,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             className="text-[15px] opacity-90 max-w-[500px] mb-8 leading-[1.9]"
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}
           >
             事故直後の処置から、むち打ち・痺れ・倦怠感の治療、
             <br className="hidden sm:block" />
@@ -179,7 +195,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/5 to-transparent pointer-events-none z-10" />
     </section>
   );
 }

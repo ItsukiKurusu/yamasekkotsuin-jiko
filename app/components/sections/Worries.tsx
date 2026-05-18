@@ -2,17 +2,60 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import {
+  Activity,
+  Brain,
+  Bone,
+  Zap,
+  BatteryLow,
+  FileQuestion,
+  Compass,
+  RefreshCw,
+  CheckCircle2,
+  type LucideIcon,
+} from "lucide-react";
 
-const worries = [
-  { icon: "🤕", title: "首・肩の痛み（むち打ち）", desc: "事故後から首や肩が痛い、動かしにくいなどの症状" },
-  { icon: "🤯", title: "頭痛・めまい", desc: "頭が重い、ぐるぐる回る感じが続いている" },
-  { icon: "😫", title: "腰の痛み", desc: "腰に鈍い痛みや張りが続いている" },
-  { icon: "⚡", title: "手足の痺れ", desc: "手や腕、足先にじんじんとした感覚がある" },
-  { icon: "😴", title: "全身の倦怠感", desc: "事故後から体が重い、疲れが取れない" },
-  { icon: "😰", title: "保険・手続きの不安", desc: "どこに連絡すればいいのか、費用はどうなるのか不安" },
-  { icon: "🏥", title: "どこへ行けばいいか迷っている", desc: "病院と接骨院どちらに行けばいいかわからない" },
-  { icon: "🔄", title: "他院で改善しない", desc: "すでに通っているが症状が改善しない、転院を考えている" },
+const worries: { icon: LucideIcon; title: string; desc: string }[] = [
+  {
+    icon: Activity,
+    title: "首・肩の痛み（むち打ち）",
+    desc: "事故後から首や肩が痛い、動かしにくいなどの症状",
+  },
+  {
+    icon: Brain,
+    title: "頭痛・めまい",
+    desc: "頭が重い、ぐるぐる回る感じが続いている",
+  },
+  {
+    icon: Bone,
+    title: "腰の痛み",
+    desc: "腰に鈍い痛みや張りが続いている",
+  },
+  {
+    icon: Zap,
+    title: "手足の痺れ",
+    desc: "手や腕、足先にじんじんとした感覚がある",
+  },
+  {
+    icon: BatteryLow,
+    title: "全身の倦怠感",
+    desc: "事故後から体が重い、疲れが取れない",
+  },
+  {
+    icon: FileQuestion,
+    title: "保険・手続きの不安",
+    desc: "どこに連絡すればいいのか、費用はどうなるのか不安",
+  },
+  {
+    icon: Compass,
+    title: "どこへ行けばいいか迷っている",
+    desc: "病院と接骨院どちらに行けばいいかわからない",
+  },
+  {
+    icon: RefreshCw,
+    title: "他院で改善しない",
+    desc: "すでに通っているが症状が改善しない、転院を考えている",
+  },
 ];
 
 const checkItems = [
@@ -31,7 +74,11 @@ const container = {
 
 const card = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export default function Worries() {
@@ -75,10 +122,15 @@ export default function Worries() {
             <motion.div
               key={i}
               variants={card}
-              className="bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default group hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,0.14)] transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,.12)] transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                {w.icon}
+              {/* Icon container */}
+              <div className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-[#e8f0fc] group-hover:bg-[#0e64ae] transition-colors duration-300">
+                <w.icon
+                  size={26}
+                  className="text-[#0e64ae] group-hover:text-white transition-colors duration-300"
+                  strokeWidth={1.8}
+                />
               </div>
               <div className="text-[14px] font-bold text-gray-800 mb-2 leading-snug">
                 {w.title}

@@ -80,7 +80,7 @@ export default function Points() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#1a6f5a] uppercase mb-2">
+          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Our Points
           </span>
           <h2 className="text-[clamp(22px,4vw,32px)] font-black leading-[1.4] text-gray-800 mb-3">
@@ -109,10 +109,10 @@ export default function Points() {
               className={`bg-white rounded-2xl p-6 shadow-sm border-t-4 transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(0,0,0,0.1)] ${
                 p.accent
                   ? "border-[#e8520a]"
-                  : "border-[#1a6f5a]"
+                  : "border-[#0e64ae]"
               }`}
             >
-              <div className={`text-[11px] font-black tracking-widest mb-2 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#1a6f5a]"}`}>
+              <div className={`text-[11px] font-black tracking-widest mb-2 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
                 POINT {p.num}
                 {p.accentLabel && (
                   <span className="bg-[#e8520a] text-white text-[9px] font-bold px-2 py-0.5 rounded">

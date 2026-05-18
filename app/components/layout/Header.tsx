@@ -18,14 +18,14 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b-2 border-[#1a6f5a]"
-          : "bg-white border-b-2 border-[#1a6f5a]"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b-2 border-[#0e64ae]"
+          : "bg-white border-b-2 border-[#0e64ae]"
       )}
     >
       <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* ロゴ */}
         <div className="leading-tight">
-          <span className="text-[#1a6f5a] font-black text-lg tracking-tight">
+          <span className="text-[#0e64ae] font-black text-lg tracking-tight">
             やま接骨院
           </span>
           <span className="block text-[11px] text-gray-400 font-normal">
@@ -39,11 +39,11 @@ export default function Header() {
             href="tel:0540000000"
             className="hidden sm:block text-right group"
           >
-            <span className="block text-[10px] text-gray-400 group-hover:text-[#1a6f5a] transition-colors">
+            <span className="block text-[10px] text-gray-400 group-hover:text-[#0e64ae] transition-colors">
               交通事故専用ダイヤル
             </span>
-            <span className="flex items-center gap-1 text-[17px] font-black text-gray-800 group-hover:text-[#1a6f5a] transition-colors tracking-tight">
-              <PhoneCall size={14} className="text-[#1a6f5a]" />
+            <span className="flex items-center gap-1 text-[17px] font-black text-gray-800 group-hover:text-[#0e64ae] transition-colors tracking-tight">
+              <PhoneCall size={14} className="text-[#0e64ae]" />
               054-295-5595
             </span>
           </a>

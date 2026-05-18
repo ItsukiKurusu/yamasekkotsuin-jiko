@@ -25,7 +25,7 @@ const steps = [
     num: "3",
     icon: "📞",
     highlight: "当日OK",
-    highlightColor: "bg-[#1a6f5a]",
+    highlightColor: "bg-[#0e64ae]",
     title: "やま接骨院に連絡する",
     body: "お体に異変を感じたらすぐにご連絡を。事故当日から受付・相談が可能です。",
   },
@@ -56,7 +56,7 @@ export default function AccidentFlow() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#1a6f5a] uppercase mb-2">
+          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             After Accident
           </span>
           <h2 className="text-[clamp(22px,4vw,32px)] font-black leading-[1.4] text-gray-800 mb-3">
@@ -83,7 +83,7 @@ export default function AccidentFlow() {
                   transition={{ duration: 0.55, delay: i * 0.12 }}
                 >
                   {/* Number circle */}
-                  <div className="w-14 h-14 rounded-full bg-[#1a6f5a] text-white flex flex-col items-center justify-center font-black shadow-[0_4px_16px_rgba(26,111,90,0.35)] mb-3">
+                  <div className="w-14 h-14 rounded-full bg-[#0e64ae] text-white flex flex-col items-center justify-center font-black shadow-[0_4px_16px_rgba(14,100,174,0.35)] mb-3">
                     <span className="text-[9px] tracking-widest">STEP</span>
                     <span className="text-xl leading-none">{step.num}</span>
                   </div>
@@ -110,7 +110,7 @@ export default function AccidentFlow() {
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: i * 0.12 + 0.3 }}
                   >
-                    <ChevronRight size={28} className="text-[#1a6f5a]" />
+                    <ChevronRight size={28} className="text-[#0e64ae]" />
                   </motion.div>
                 )}
               </div>
@@ -128,12 +128,12 @@ export default function AccidentFlow() {
                 transition={{ duration: 0.55, delay: i * 0.1 }}
               >
                 <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-[#1a6f5a] text-white flex flex-col items-center justify-center font-black shadow-[0_3px_12px_rgba(26,111,90,0.3)]">
+                  <div className="w-12 h-12 rounded-full bg-[#0e64ae] text-white flex flex-col items-center justify-center font-black shadow-[0_3px_12px_rgba(14,100,174,0.3)]">
                     <span className="text-[8px] tracking-widest">STEP</span>
                     <span className="text-base leading-none">{step.num}</span>
                   </div>
                   {i < steps.length - 1 && (
-                    <div className="w-0.5 h-8 bg-gradient-to-b from-[#1a6f5a] to-transparent mt-1" />
+                    <div className="w-0.5 h-8 bg-gradient-to-b from-[#0e64ae] to-transparent mt-1" />
                   )}
                 </div>
 

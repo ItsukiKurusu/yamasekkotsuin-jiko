@@ -104,7 +104,7 @@ export default function TreatmentFlow() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#1a6f5a] uppercase mb-2">
+          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Treatment Flow
           </span>
           <h2 className="text-[clamp(22px,4vw,32px)] font-black leading-[1.4] text-gray-800 mb-3">
@@ -151,7 +151,7 @@ function StepItem({
     >
       {/* Left: circle + line */}
       <div className="flex flex-col items-center w-[88px] flex-shrink-0 sm:w-[104px]">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1a6f5a] text-white flex flex-col items-center justify-center font-black shadow-[0_4px_16px_rgba(26,111,90,0.35)] z-10">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0e64ae] text-white flex flex-col items-center justify-center font-black shadow-[0_4px_16px_rgba(14,100,174,0.35)] z-10">
           <span className="text-[9px] tracking-widest">STEP</span>
           <span className="text-xl leading-none">{step.num}</span>
         </div>
@@ -159,7 +159,7 @@ function StepItem({
           <motion.div
             className="w-0.5 flex-1 min-h-[40px] mt-0"
             style={{
-              background: "linear-gradient(to bottom, #1a6f5a, #e8f5f0)",
+              background: "linear-gradient(to bottom, #0e64ae, #e8f0fc)",
             }}
             initial={{ scaleY: 0, originY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
@@ -170,7 +170,7 @@ function StepItem({
 
       {/* Right: content card */}
       <div className={`flex-1 bg-white border border-gray-100 rounded-2xl shadow-sm p-6 sm:p-8 ${isLast ? "mb-0" : "mb-10"} ml-4 sm:ml-6`}>
-        <div className="text-[11px] font-bold text-[#1a6f5a] tracking-widest mb-2">
+        <div className="text-[11px] font-bold text-[#0e64ae] tracking-widest mb-2">
           {step.label}
         </div>
         <h3 className="text-[18px] sm:text-xl font-black text-gray-800 mb-3">
@@ -185,12 +185,12 @@ function StepItem({
           {step.items.map((item, j) => (
             <motion.div
               key={j}
-              className="bg-[#e8f5f0] rounded-xl p-4"
+              className="bg-[#e8f0fc] rounded-xl p-4"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.45, delay: 0.3 + j * 0.08 }}
             >
-              <div className="text-[13px] font-bold text-[#134d3e] mb-1">
+              <div className="text-[13px] font-bold text-[#0a4d84] mb-1">
                 {item.icon} {item.title}
               </div>
               <div className="text-[12px] text-gray-600 leading-relaxed">

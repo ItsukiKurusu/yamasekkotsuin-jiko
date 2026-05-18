@@ -13,7 +13,7 @@ export default function CtaSection() {
       id="cta"
       className="py-20 md:py-24 relative overflow-hidden"
       style={{
-        background: "linear-gradient(140deg, #0a3d2e 0%, #1a6f5a 60%, #22896e 100%)",
+        background: "linear-gradient(140deg, #072d5c 0%, #0e64ae 60%, #1a7fc4 100%)",
       }}
     >
       {/* BG pattern */}
@@ -68,7 +68,7 @@ export default function CtaSection() {
           {/* Phone number */}
           <motion.a
             href="tel:0540000000"
-            className="block text-[clamp(26px,5vw,38px)] font-black text-gray-800 hover:text-[#1a6f5a] transition-colors duration-200 tracking-tight mb-2"
+            className="block text-[clamp(26px,5vw,38px)] font-black text-gray-800 hover:text-[#0e64ae] transition-colors duration-200 tracking-tight mb-2"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -103,7 +103,7 @@ export default function CtaSection() {
               href="https://yama-sekkotsuin.jp/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#1a6f5a] border-2 border-[#1a6f5a] hover:bg-[#1a6f5a] hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[14px]"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#0e64ae] border-2 border-[#0e64ae] hover:bg-[#0e64ae] hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[14px]"
             >
               <ExternalLink size={15} />
               院のトップページへ

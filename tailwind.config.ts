@@ -11,9 +11,9 @@ const config: Config = {
       colors: {
         clinic: {
           green: {
-            DEFAULT: "#1a6f5a",
-            dark: "#134d3e",
-            light: "#e8f5f0",
+            DEFAULT: "#0e64ae",
+            dark: "#0a4d84",
+            light: "#e8f0fc",
           },
           orange: {
             DEFAULT: "#e8520a",

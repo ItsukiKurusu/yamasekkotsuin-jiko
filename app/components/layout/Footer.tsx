@@ -7,7 +7,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#134d3e] text-white/75 py-10 px-5 text-sm">
+    <footer className="bg-[#0a4d84] text-white/75 py-10 px-5 text-sm">
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-xl font-black text-white mb-2">やま接骨院</p>
         <p>〒420-0810 静岡県静岡市葵区上土1丁目17-4 エクセル千代田1-A</p>

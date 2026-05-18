@@ -51,7 +51,7 @@ export default function Worries() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#1a6f5a] uppercase mb-2">
+          <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Worries
           </span>
           <h2 className="text-[clamp(22px,4vw,32px)] font-black leading-[1.4] text-gray-800 mb-3">
@@ -75,7 +75,7 @@ export default function Worries() {
             <motion.div
               key={i}
               variants={card}
-              className="bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default group hover:border-[#1a6f5a] hover:shadow-[0_6px_24px_rgba(26,111,90,0.14)] transition-all duration-300 hover:-translate-y-1"
+              className="bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default group hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,0.14)] transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                 {w.icon}

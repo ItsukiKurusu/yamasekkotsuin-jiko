@@ -18,7 +18,7 @@ export default function FreeSection() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="relative rounded-3xl overflow-hidden p-10 md:p-14 text-center text-white"
           style={{
-            background: "linear-gradient(135deg, #0d4a38 0%, #1a6f5a 50%, #22896e 100%)",
+            background: "linear-gradient(135deg, #093a6e 0%, #0e64ae 50%, #1a7fc4 100%)",
           }}
         >
           {/* Background pattern */}

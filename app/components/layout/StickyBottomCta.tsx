@@ -13,7 +13,7 @@ export default function StickyBottomCta() {
     >
       <a
         href="tel:0540000000"
-        className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-white bg-[#1a6f5a] hover:bg-[#134d3e] active:bg-[#0d3a2a] transition-colors"
+        className="flex-1 flex items-center justify-center gap-2 py-4 text-sm font-bold text-white bg-[#0e64ae] hover:bg-[#0a4d84] active:bg-[#072d5c] transition-colors"
       >
         <PhoneCall size={16} />
         電話で相談

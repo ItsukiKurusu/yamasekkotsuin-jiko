@@ -3,183 +3,58 @@
 import Image from "next/image";
 import heroImage from "../../public/hero.png";
 import { motion } from "framer-motion";
-import { PhoneCall, MessageCircle, Shield, Zap, User, Scale } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 36 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay: i * 0.13, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
-
-const features = [
-  { icon: Shield, accent: "窓口負担0円", sub: "自賠責保険適用" },
-  { icon: Zap, accent: "事故当日", sub: "から受付可能" },
-  { icon: User, accent: "院長", sub: "が直接施術" },
-  { icon: Scale, accent: "弁護士", sub: "と連携" },
-];
+import { PhoneCall, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[750px] md:min-h-[820px] flex items-center overflow-hidden mt-20 md:mt-24">
+    <section className="relative flex items-end overflow-hidden mt-20 md:mt-24">
       {/* Background image */}
       <Image
         src={heroImage}
         alt="やま接骨院 院内・施術イメージ"
-        fill
-        className="object-cover object-center"
+        className="w-full h-auto object-contain"
         priority
-        quality={85}
+        quality={90}
       />
 
-      {/* Gradient overlay */}
+      {/* 下部グラデーション（CTAボタンの可読性確保） */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(140deg, rgba(7,45,92,0.94) 0%, rgba(10,77,132,0.89) 35%, rgba(14,100,174,0.84) 70%, rgba(26,127,196,0.78) 100%)",
+          background: "linear-gradient(to top, rgba(7,45,92,0.88) 0%, rgba(7,45,92,0.3) 30%, transparent 55%)",
         }}
       />
 
-      {/* Subtle pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Animated spotlight */}
-      <motion.div
-        className="absolute pointer-events-none rounded-full"
-        animate={{ x: ["-8%", "8%", "-8%"], y: ["-8%", "8%", "-8%"], scale: [1, 1.05, 1] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          width: "70%",
-          height: "70%",
-          top: "-15%",
-          left: "15%",
-          background: "radial-gradient(ellipse at center, rgba(255,224,102,0.14) 0%, rgba(255,200,50,0.05) 40%, transparent 70%)",
-          filter: "blur(32px)",
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 py-24">
-        <div className="text-white max-w-3xl">
-          {/* Badge */}
-          <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible">
-            <span className="inline-block bg-[#e8520a] text-white text-xs font-bold px-6 py-2 rounded-full mb-7 tracking-widest uppercase shadow-[0_2px_12px_rgba(232,82,10,0.5)]">
-              交通事故治療 専門対応
-            </span>
-          </motion.div>
-
-          {/* Main heading */}
-          <motion.h1
-            custom={1}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-[clamp(32px,6vw,62px)] font-black leading-[1.25] mb-7 tracking-tight"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.3)" }}
+      {/* CTA buttons */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-5xl mx-auto px-5 pb-10 flex flex-wrap gap-4"
+        >
+          <a
+            href="tel:0540000000"
+            className="inline-flex items-center gap-2.5 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-1 shadow-[0_4px_24px_rgba(232,82,10,0.45)] text-[16px] whitespace-nowrap"
           >
-            交通事故後の
-            <span className="text-[#ffe066] relative inline-block">
-              痛み・不調
-              <motion.span
-                className="absolute -bottom-1 left-0 right-0 h-[3px] bg-[#ffe066]/50 rounded-full"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-              />
-            </span>
-            、<br />
-            一人で抱え込まないでください。
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            custom={2}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-[17px] opacity-90 max-w-[540px] mb-9 leading-[2]"
-            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.3)" }}
+            <PhoneCall size={18} className="flex-shrink-0" />
+            今すぐ電話する
+          </a>
+          <a
+            href="https://line.me/R/ti/p/@688vrvtg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-1 shadow-[0_4px_24px_rgba(6,199,85,0.4)] text-[16px] whitespace-nowrap"
           >
-            事故直後の処置から、むち打ち・痺れ・倦怠感の治療、
-            <br className="hidden sm:block" />
-            保険手続きのサポートまで。
-            <br className="hidden sm:block" />
-            やま接骨院が、回復への道を全力でサポートします。
-          </motion.p>
-
-          {/* Feature badges */}
-          <motion.div
-            custom={3}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap gap-3 mb-10"
-          >
-            {features.map((f, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 bg-white/12 border border-white/30 rounded-full px-5 py-2.5 text-[14px] font-bold backdrop-blur-sm hover:bg-white/22 transition-colors duration-200"
-              >
-                <f.icon size={14} className="text-[#ffe066] flex-shrink-0" />
-                <span>
-                  <span className="text-[#ffe066]">{f.accent}</span>
-                  {f.sub}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* CTA buttons */}
-          <motion.div
-            custom={4}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="tel:0540000000"
-              className="inline-flex items-center gap-2.5 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-1 shadow-[0_4px_24px_rgba(232,82,10,0.45)] text-[16px]"
-            >
-              <PhoneCall size={18} />
-              今すぐ電話する
-            </a>
-            <a
-              href="https://line.me/R/ti/p/@688vrvtg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-1 shadow-[0_4px_24px_rgba(6,199,85,0.4)] text-[16px]"
-            >
-              <MessageCircle size={18} />
-              LINEで相談する（24時間）
-            </a>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* ロゴマーク ウォーターマーク（PC右下） */}
-      <div className="absolute right-[-40px] bottom-[-20px] hidden md:block pointer-events-none select-none opacity-[0.08]">
-        <Image
-          src="/logo-mojinashi.PNG"
-          alt=""
-          width={420}
-          height={420}
-          className="object-contain"
-          unoptimized
-        />
+            <MessageCircle size={18} className="flex-shrink-0" />
+            LINEで相談する（24時間）
+          </a>
+        </motion.div>
       </div>
 
       {/* Scroll cue */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/60"
+        className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-1 text-white/60"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >

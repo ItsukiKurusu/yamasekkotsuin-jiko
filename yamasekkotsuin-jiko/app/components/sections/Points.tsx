@@ -80,16 +80,16 @@ export default function Points() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[13px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Our Points
           </span>
-          <h2 className="text-[clamp(26px,5vw,40px)] font-black leading-[1.4] text-gray-800 mb-3">
+          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
             やま接骨院が選ばれる
             <br />
             <span className="text-[#e8520a]">8つの理由</span>
           </h2>
           <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[16px] text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-[18px] text-gray-500 max-w-xl mx-auto leading-relaxed">
             交通事故による痛みや不調にお悩みの方へ。やま接骨院では、安心して治療に専念できる環境を整え、皆さまの早期回復を全力でサポートします。
           </p>
         </motion.div>
@@ -120,10 +120,10 @@ export default function Points() {
                   </span>
                 )}
               </div>
-              <h3 className="text-[17px] font-black text-gray-800 mb-3 leading-snug">
+              <h3 className="text-[20px] font-black text-gray-800 mb-3 leading-snug">
                 {p.title}
               </h3>
-              <p className="text-[15px] text-gray-500 leading-relaxed">
+              <p className="text-[17px] text-gray-500 leading-relaxed">
                 {p.body}
               </p>
             </motion.div>

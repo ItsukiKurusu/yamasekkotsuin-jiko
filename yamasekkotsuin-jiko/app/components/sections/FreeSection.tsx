@@ -45,26 +45,26 @@ export default function FreeSection() {
           />
 
           <div className="relative z-10">
-            <p className="text-[17px] opacity-85 mb-2">自賠責保険が適用されるため</p>
+            <p className="text-[19px] opacity-85 mb-2">自賠責保険が適用されるため</p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-[clamp(42px,8vw,68px)] font-black text-[#ffe066] leading-none mb-6 tracking-tight"
+              className="text-[clamp(48px,9vw,76px)] font-black text-[#ffe066] leading-none mb-6 tracking-tight"
               style={{ textShadow: "0 4px 20px rgba(255,224,102,0.3)" }}
             >
               窓口負担 0円
             </motion.div>
 
-            <p className="text-[16px] opacity-90 max-w-xl mx-auto leading-relaxed mb-8">
+            <p className="text-[18px] opacity-90 max-w-xl mx-auto leading-relaxed mb-8">
               交通事故の場合、自賠責保険が適用されるため、患者様が治療費を直接ご負担いただく必要はありません。
               保険手続きの煩雑な書類作成も、経験豊富なスタッフが全力でサポートします。
             </p>
 
             <a
               href="#cta"
-              className="inline-flex items-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(232,82,10,0.4)] text-[15px]"
+              className="inline-flex items-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(232,82,10,0.4)] text-[17px]"
             >
               詳しく相談する（無料）
               <ArrowRight size={16} />

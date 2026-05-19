@@ -53,13 +53,13 @@ export default function CtaSection() {
           </span>
 
           {/* Title */}
-          <h2 className="text-[clamp(22px,4vw,30px)] font-black text-gray-800 mb-3 leading-snug">
+          <h2 className="text-[clamp(26px,4.5vw,36px)] font-black text-gray-800 mb-3 leading-snug">
             交通事故後の不調、
             <br />
             まずはお気軽にご相談ください
           </h2>
 
-          <p className="text-[15px] text-gray-500 mb-7 leading-relaxed">
+          <p className="text-[17px] text-gray-500 mb-7 leading-relaxed">
             お電話・LINEにてご相談・ご予約を受け付けています。
             <br />
             事故直後から受付可能。費用は一切かかりません。
@@ -75,7 +75,7 @@ export default function CtaSection() {
             📞 054-295-5595
           </motion.a>
 
-          <p className="text-[13px] text-gray-400 mb-7">
+          <p className="text-[15px] text-gray-400 mb-7">
             営業時間：平日 9:00〜20:00 ／ 土曜 9:00〜15:00
             <span className="mx-1 opacity-50">|</span>
             定休日：日・祝・不定休
@@ -85,7 +85,7 @@ export default function CtaSection() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="tel:0540000000"
-              className="inline-flex items-center justify-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(232,82,10,0.35)] text-[14px]"
+              className="inline-flex items-center justify-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-6 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(232,82,10,0.35)] text-[16px]"
             >
               <PhoneCall size={16} />
               電話で相談する
@@ -94,7 +94,7 @@ export default function CtaSection() {
               href="https://line.me/R/ti/p/@688vrvtg"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(6,199,85,0.35)] text-[14px]"
+              className="inline-flex items-center justify-center gap-2 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-6 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(6,199,85,0.35)] text-[16px]"
             >
               <MessageCircle size={16} />
               LINEで相談する（24時間）
@@ -103,7 +103,7 @@ export default function CtaSection() {
               href="https://yama-sekkotsuin.jp/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#0e64ae] border-2 border-[#0e64ae] hover:bg-[#0e64ae] hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[14px]"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#0e64ae] border-2 border-[#0e64ae] hover:bg-[#0e64ae] hover:text-white font-bold px-6 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[16px]"
             >
               <ExternalLink size={15} />
               院のトップページへ

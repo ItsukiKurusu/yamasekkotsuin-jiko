@@ -125,16 +125,16 @@ export default function TreatmentFlow() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[13px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Treatment Flow
           </span>
-          <h2 className="text-[clamp(26px,5vw,40px)] font-black text-gray-800 mb-3">
+          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black text-gray-800 mb-3">
             やま接骨院での
             <br />
             <span className="text-[#e8520a]">治療の流れ</span>
           </h2>
           <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[16px] text-gray-500 max-w-lg mx-auto">
+          <p className="text-[18px] text-gray-500 max-w-lg mx-auto">
             初めての方でも安心してご来院いただけるよう、来院からアフターフォローまで丁寧にご説明します。
           </p>
         </motion.div>
@@ -218,10 +218,10 @@ function StepItem({
 
         {/* Content */}
         <div className="p-6 sm:p-8">
-          <h3 className="text-[22px] sm:text-[26px] font-black text-gray-800 mb-3">
+          <h3 className="text-[26px] sm:text-[30px] font-black text-gray-800 mb-3">
             {step.icon} {step.title}
           </h3>
-          <p className="text-[16px] text-gray-500 leading-relaxed mb-6">
+          <p className="text-[18px] text-gray-500 leading-relaxed mb-6">
             {step.desc}
           </p>
 
@@ -234,10 +234,10 @@ function StepItem({
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.45, delay: 0.4 + j * 0.08 }}
               >
-                <div className="text-[15px] font-bold text-[#0a4d84] mb-1.5">
+                <div className="text-[17px] font-bold text-[#0a4d84] mb-1.5">
                   {item.icon} {item.title}
                 </div>
-                <div className="text-[14px] text-gray-600 leading-relaxed">
+                <div className="text-[16px] text-gray-600 leading-relaxed">
                   {item.body}
                 </div>
               </motion.div>

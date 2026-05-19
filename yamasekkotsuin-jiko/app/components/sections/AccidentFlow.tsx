@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { AlertTriangle, ShieldAlert, ClipboardCheck, PhoneCall, FileText, LucideIcon } from "lucide-react";
+import { AlertTriangle, Siren, ClipboardList, PhoneCall, FileCheck2, LucideIcon } from "lucide-react";
 
 const steps: {
   num: string;
@@ -16,9 +16,9 @@ const steps: {
 }[] = [
   {
     num: "1",
-    Icon: ShieldAlert,
+    Icon: Siren,
     iconBg: "from-red-400 to-red-600",
-    iconShadow: "shadow-red-200",
+    iconShadow: "shadow-red-300",
     highlight: "最優先",
     highlightColor: "bg-red-500",
     title: "警察に電話する",
@@ -26,9 +26,9 @@ const steps: {
   },
   {
     num: "2",
-    Icon: ClipboardCheck,
+    Icon: ClipboardList,
     iconBg: "from-orange-400 to-[#e8520a]",
-    iconShadow: "shadow-orange-200",
+    iconShadow: "shadow-orange-300",
     highlight: "その場で確認",
     highlightColor: "bg-[#e8520a]",
     title: "相手の情報を確認する",
@@ -38,7 +38,7 @@ const steps: {
     num: "3",
     Icon: PhoneCall,
     iconBg: "from-blue-400 to-[#0e64ae]",
-    iconShadow: "shadow-blue-200",
+    iconShadow: "shadow-blue-300",
     highlight: "当日OK",
     highlightColor: "bg-[#0e64ae]",
     title: "やま接骨院に連絡する",
@@ -46,11 +46,11 @@ const steps: {
   },
   {
     num: "4",
-    Icon: FileText,
-    iconBg: "from-gray-400 to-gray-600",
-    iconShadow: "shadow-gray-200",
+    Icon: FileCheck2,
+    iconBg: "from-slate-400 to-slate-600",
+    iconShadow: "shadow-slate-300",
     highlight: "後日でもOK",
-    highlightColor: "bg-gray-500",
+    highlightColor: "bg-slate-500",
     title: "保険会社に連絡する",
     body: "ご自身の保険会社への連絡は後日でも可能です。書類のことは当院スタッフにご相談ください。",
   },
@@ -73,16 +73,16 @@ export default function AccidentFlow() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[13px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             After Accident
           </span>
-          <h2 className="text-[clamp(26px,5vw,40px)] font-black leading-[1.4] text-gray-800 mb-3">
+          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
             もしも事故に遭ってしまったら…
             <br />
             <span className="text-[#e8520a]">まずやること4ステップ</span>
           </h2>
           <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[16px] text-gray-500 max-w-lg mx-auto">
+          <p className="text-[18px] text-gray-500 max-w-lg mx-auto">
             事故直後は混乱してしまいますが、落ち着いてこの手順で対応しましょう。
           </p>
         </motion.div>
@@ -107,19 +107,19 @@ export default function AccidentFlow() {
                 )}
               </div>
 
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 sm:p-6 flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.iconBg} flex items-center justify-center flex-shrink-0 shadow-md ${step.iconShadow}`}>
-                    <step.Icon size={18} className="text-white" strokeWidth={2} />
+              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7 flex-1">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.iconBg} flex items-center justify-center flex-shrink-0 shadow-xl ${step.iconShadow}`}>
+                    <step.Icon size={30} className="text-white" strokeWidth={1.8} />
                   </div>
-                  <span className={`inline-block ${step.highlightColor} text-white text-[11px] font-bold px-3 py-1 rounded-full`}>
+                  <span className={`inline-block ${step.highlightColor} text-white text-[13px] font-bold px-4 py-1.5 rounded-full`}>
                     {step.highlight}
                   </span>
                 </div>
-                <div className="text-[17px] font-black text-gray-800 mb-2 leading-snug">
+                <div className="text-[20px] font-black text-gray-800 mb-2.5 leading-snug">
                   {step.title}
                 </div>
-                <div className="text-[15px] text-gray-500 leading-relaxed">
+                <div className="text-[17px] text-gray-500 leading-relaxed">
                   {step.body}
                 </div>
               </div>
@@ -135,13 +135,13 @@ export default function AccidentFlow() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-10 bg-[#fff3ee] border border-[#e8520a]/20 rounded-2xl px-6 py-5"
         >
-          <div className="flex items-start gap-3">
-            <AlertTriangle size={20} className="text-[#e8520a] flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-4">
+            <AlertTriangle size={24} className="text-[#e8520a] flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-[14px] font-bold text-[#e8520a] mb-1">
+              <p className="text-[16px] font-bold text-[#e8520a] mb-1.5">
                 「痛みがないから大丈夫」は危険です！
               </p>
-              <p className="text-[13px] text-gray-600 leading-relaxed">
+              <p className="text-[15px] text-gray-600 leading-relaxed">
                 むち打ちなどの症状は、事故直後は痛みを感じないことがあります。数日後・数週間後に症状が現れるケースも多く、放置すると慢性化・後遺症のリスクが高まります。
                 <strong className="text-gray-800">事故に遭ったら症状がなくても必ず受診しましょう。</strong>
               </p>

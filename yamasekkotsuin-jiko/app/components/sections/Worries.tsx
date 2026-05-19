@@ -98,14 +98,14 @@ export default function Worries() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[13px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Worries
           </span>
-          <h2 className="text-[clamp(26px,5vw,40px)] font-black leading-[1.4] text-gray-800 mb-3">
+          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
             こんなお悩み<span className="text-[#e8520a]">ありませんか？</span>
           </h2>
           <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[16px] text-gray-500 max-w-[600px] mx-auto leading-relaxed">
+          <p className="text-[18px] text-gray-500 max-w-[600px] mx-auto leading-relaxed">
             交通事故後に現れる症状は多岐にわたります。「たいしたことない」と思って放置すると、後から症状が悪化するケースも。気になる症状がある方は、お早めにご相談ください。
           </p>
         </motion.div>
@@ -125,17 +125,17 @@ export default function Worries() {
               className="group bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,.12)] transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon container */}
-              <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-[#e8f0fc] group-hover:bg-[#0e64ae] transition-colors duration-300">
+              <div className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-[#e8f0fc] group-hover:bg-[#0e64ae] transition-colors duration-300">
                 <w.icon
-                  size={30}
+                  size={36}
                   className="text-[#0e64ae] group-hover:text-white transition-colors duration-300"
-                  strokeWidth={1.8}
+                  strokeWidth={1.6}
                 />
               </div>
-              <div className="text-[16px] font-bold text-gray-800 mb-2 leading-snug">
+              <div className="text-[19px] font-bold text-gray-800 mb-2 leading-snug">
                 {w.title}
               </div>
-              <div className="text-[14px] text-gray-400 leading-relaxed">
+              <div className="text-[16px] text-gray-400 leading-relaxed">
                 {w.desc}
               </div>
             </motion.div>
@@ -150,17 +150,17 @@ export default function Worries() {
           transition={{ duration: 0.65, delay: 0.2 }}
           className="mt-12 bg-white border-2 border-[#e8520a] rounded-2xl p-8 md:p-10 max-w-2xl mx-auto"
         >
-          <h3 className="text-[19px] font-black text-[#e8520a] text-center mb-6">
+          <h3 className="text-[22px] font-black text-[#e8520a] text-center mb-6">
             ⚠️ 一つでも当てはまる方は、すぐにご相談ください
           </h3>
           <ul className="space-y-0">
             {checkItems.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 py-3.5 border-b border-gray-100 last:border-0 text-[15px] text-gray-700"
+                className="flex items-start gap-3 py-4 border-b border-gray-100 last:border-0 text-[17px] text-gray-700"
               >
                 <CheckCircle2
-                  size={17}
+                  size={20}
                   className="text-[#e8520a] flex-shrink-0 mt-0.5"
                 />
                 {item}

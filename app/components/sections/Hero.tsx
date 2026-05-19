@@ -23,7 +23,7 @@ const features = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[750px] md:min-h-[820px] flex items-center overflow-hidden mt-16">
+    <section className="relative min-h-[750px] md:min-h-[820px] flex items-center overflow-hidden mt-20 md:mt-24">
       {/* Background image */}
       <Image
         src={heroImage}

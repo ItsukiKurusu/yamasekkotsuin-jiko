@@ -53,13 +53,13 @@ export default function CtaSection() {
           </span>
 
           {/* Title */}
-          <h2 className="text-[clamp(26px,4.5vw,36px)] font-black text-gray-800 mb-3 leading-snug">
+          <h2 className="text-[clamp(28px,5vw,42px)] font-black text-gray-800 mb-4 leading-snug">
             交通事故後の不調、
             <br />
             まずはお気軽にご相談ください
           </h2>
 
-          <p className="text-[17px] text-gray-500 mb-7 leading-relaxed">
+          <p className="text-[18px] text-gray-500 mb-8 leading-relaxed">
             お電話・LINEにてご相談・ご予約を受け付けています。
             <br />
             事故直後から受付可能。費用は一切かかりません。
@@ -68,14 +68,15 @@ export default function CtaSection() {
           {/* Phone number */}
           <motion.a
             href="tel:0540000000"
-            className="block text-[clamp(26px,5vw,38px)] font-black text-gray-800 hover:text-[#0e64ae] transition-colors duration-200 tracking-tight mb-2"
+            className="flex items-center justify-center gap-3 text-[clamp(28px,5vw,42px)] font-black text-gray-800 hover:text-[#0e64ae] transition-colors duration-200 tracking-tight mb-2"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            📞 054-295-5595
+            <PhoneCall size={32} className="text-[#0e64ae]" />
+            054-295-5595
           </motion.a>
 
-          <p className="text-[15px] text-gray-400 mb-7">
+          <p className="text-[16px] text-gray-400 mb-8">
             営業時間：平日 9:00〜20:00 ／ 土曜 9:00〜15:00
             <span className="mx-1 opacity-50">|</span>
             定休日：日・祝・不定休

@@ -9,7 +9,7 @@ export default function FreeSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-24 md:py-32 bg-gray-50">
       <div className="max-w-5xl mx-auto px-5">
         <motion.div
           ref={ref}

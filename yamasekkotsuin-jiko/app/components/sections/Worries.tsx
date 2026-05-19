@@ -88,7 +88,7 @@ export default function Worries() {
   const checkInView = useInView(checkRef, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-28 md:py-40">
       <div className="max-w-5xl mx-auto px-5">
         {/* Section header */}
         <motion.div
@@ -98,14 +98,14 @@ export default function Worries() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[15px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-3">
             Worries
           </span>
-          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
+          <h2 className="text-[clamp(38px,7vw,68px)] font-black leading-[1.2] text-gray-800 mb-4">
             こんなお悩み<span className="text-[#e8520a]">ありませんか？</span>
           </h2>
-          <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[18px] text-gray-500 max-w-[600px] mx-auto leading-relaxed">
+          <div className="w-14 h-1.5 bg-[#e8520a] rounded-full mx-auto mb-5" />
+          <p className="text-[19px] md:text-[21px] text-gray-500 max-w-[600px] mx-auto leading-relaxed">
             交通事故後に現れる症状は多岐にわたります。「たいしたことない」と思って放置すると、後から症状が悪化するケースも。気になる症状がある方は、お早めにご相談ください。
           </p>
         </motion.div>
@@ -122,20 +122,20 @@ export default function Worries() {
             <motion.div
               key={i}
               variants={card}
-              className="group bg-white border-2 border-gray-100 rounded-2xl p-5 text-center cursor-default hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,.12)] transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white border-2 border-gray-100 rounded-2xl p-8 text-center cursor-default hover:border-[#0e64ae] hover:shadow-[0_6px_24px_rgba(14,100,174,.12)] transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon container */}
-              <div className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-[#e8f0fc] group-hover:bg-[#0e64ae] transition-colors duration-300">
+              <div className="w-24 h-24 rounded-3xl mx-auto mb-6 flex items-center justify-center bg-[#e8f0fc] group-hover:bg-[#0e64ae] transition-colors duration-300">
                 <w.icon
-                  size={36}
+                  size={42}
                   className="text-[#0e64ae] group-hover:text-white transition-colors duration-300"
-                  strokeWidth={1.6}
+                  strokeWidth={1.5}
                 />
               </div>
-              <div className="text-[19px] font-bold text-gray-800 mb-2 leading-snug">
+              <div className="text-[22px] font-bold text-gray-800 mb-3 leading-snug">
                 {w.title}
               </div>
-              <div className="text-[16px] text-gray-400 leading-relaxed">
+              <div className="text-[17px] text-gray-400 leading-relaxed">
                 {w.desc}
               </div>
             </motion.div>
@@ -148,19 +148,19 @@ export default function Worries() {
           initial={{ opacity: 0, y: 28 }}
           animate={checkInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.2 }}
-          className="mt-12 bg-white border-2 border-[#e8520a] rounded-2xl p-8 md:p-10 max-w-2xl mx-auto"
+          className="mt-14 bg-white border-2 border-[#e8520a] rounded-2xl p-10 md:p-12 max-w-2xl mx-auto"
         >
-          <h3 className="text-[22px] font-black text-[#e8520a] text-center mb-6">
-            ⚠️ 一つでも当てはまる方は、すぐにご相談ください
+          <h3 className="text-[24px] md:text-[26px] font-black text-[#e8520a] text-center mb-8">
+            一つでも当てはまる方は、すぐにご相談ください
           </h3>
           <ul className="space-y-0">
             {checkItems.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 py-4 border-b border-gray-100 last:border-0 text-[17px] text-gray-700"
+                className="flex items-start gap-4 py-5 border-b border-gray-100 last:border-0 text-[18px] text-gray-700"
               >
                 <CheckCircle2
-                  size={20}
+                  size={22}
                   className="text-[#e8520a] flex-shrink-0 mt-0.5"
                 />
                 {item}

@@ -3,6 +3,23 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import {
+  Calendar,
+  MessageSquare,
+  Stethoscope,
+  BarChart2,
+  Phone,
+  PenLine,
+  Search,
+  Scale,
+  Wand2,
+  Zap,
+  UserCheck,
+  Heart,
+  TrendingUp,
+  Activity,
+  type LucideIcon,
+} from "lucide-react";
 import entranceImg from "../../public/entrance.jpg";
 import explainingImg from "../../public/explaining.jpg";
 import chiryouImg from "../../public/chiryou.jpg";
@@ -11,29 +28,29 @@ import counselingImg from "../../public/counseling.jpg";
 const steps: {
   num: string;
   label: string;
-  icon: string;
+  Icon: LucideIcon;
   title: string;
   desc: string;
   image: StaticImageData;
   imageAlt: string;
-  items: { icon: string; title: string; body: string }[];
+  items: { Icon: LucideIcon; title: string; body: string }[];
 }[] = [
   {
     num: "1",
     label: "STEP 01",
-    icon: "📅",
+    Icon: Calendar,
     title: "予約・受付",
     desc: "ご来院前にお電話またはLINEでご予約ください。交通事故専用の問診表をご記入いただき、お身体の状態や事故後の状況について詳しくお聞きします。",
     image: entranceImg,
     imageAlt: "やま接骨院 院内・受付",
     items: [
       {
-        icon: "📞",
+        Icon: Phone,
         title: "事前予約",
         body: "お電話またはLINEからご予約が可能です。当日予約もお気軽にご相談ください。",
       },
       {
-        icon: "📝",
+        Icon: PenLine,
         title: "問診表の記入",
         body: "交通事故専用の問診表をご記入。事故状況やお身体の不調を詳しくお聞きします。",
       },
@@ -42,19 +59,19 @@ const steps: {
   {
     num: "2",
     label: "STEP 02",
-    icon: "💬",
+    Icon: MessageSquare,
     title: "問診・カウンセリング",
     desc: "事故後のお悩みを丁寧にお聞きし、損害保険会社との概要や必要書類についてのアドバイスも行います。必要に応じて弁護士のご紹介も可能です。",
     image: explainingImg,
     imageAlt: "丁寧なカウンセリングの様子",
     items: [
       {
-        icon: "🔍",
+        Icon: Search,
         title: "状況の把握",
         body: "事故当時から現在までの状況をしっかり確認。整形外科との同時通院の進め方もアドバイスします。",
       },
       {
-        icon: "⚖️",
+        Icon: Scale,
         title: "弁護士対応",
         body: "必要に応じて交通事故に強い弁護士をご紹介。書類作成や交渉のサポートを受けることができます。",
       },
@@ -63,29 +80,29 @@ const steps: {
   {
     num: "3",
     label: "STEP 03",
-    icon: "✨",
+    Icon: Stethoscope,
     title: "交通事故特化治療",
     desc: "「安心」と「早期回復」を第一に考えた治療を提供します。患者さま一人ひとりに合わせたオーダーメイドの治療計画で、痛みや不調に最適なアプローチを行います。",
     image: chiryouImg,
     imageAlt: "交通事故特化治療の様子",
     items: [
       {
-        icon: "🙌",
+        Icon: Wand2,
         title: "施術方法",
         body: "症状や事故の状況に合わせた治療計画を作成。痛みや不調に対して最適なアプローチを行います。",
       },
       {
-        icon: "⚡",
+        Icon: Zap,
         title: "電気療法（エレサス）",
         body: "直流治療器『エレサス』を使用。筋肉の緊張緩和・血流促進・炎症軽減・神経症状の改善に効果的です。",
       },
       {
-        icon: "👨‍⚕️",
+        Icon: UserCheck,
         title: "事故に詳しい院長が対応",
         body: "専門知識を持った院長がサポート。交通事故後の悩みにわかりやすくご説明します。",
       },
       {
-        icon: "😌",
+        Icon: Heart,
         title: "痛みへの配慮",
         body: "痛みを極力抑えた施術で、安心してリラックスしながら治療を受けていただけます。",
       },
@@ -94,19 +111,19 @@ const steps: {
   {
     num: "4",
     label: "STEP 04",
-    icon: "📊",
+    Icon: BarChart2,
     title: "経過確認・アフターフォロー",
     desc: "毎施術ごとにお身体の状態を確認し、回復の進捗を細かくチェック。残りの痛みが改善するまでの期間や回復の見通しをしっかり説明します。",
     image: counselingImg,
     imageAlt: "アフターフォローの様子",
     items: [
       {
-        icon: "📈",
+        Icon: TrendingUp,
         title: "施術計画の見直し",
         body: "症状変化に合わせて施術計画を柔軟に見直します。より早期回復を目指した追加施術も提案可能です。",
       },
       {
-        icon: "🏃",
+        Icon: Activity,
         title: "セルフケアの提案",
         body: "「痛みが出ないためには」「自分でできる改善方法」など、患者さまが必要な情報を余すことなくお伝えします。",
       },
@@ -116,25 +133,25 @@ const steps: {
 
 export default function TreatmentFlow() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-28 md:py-40">
       <div className="max-w-5xl mx-auto px-5">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[15px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-3">
             Treatment Flow
           </span>
-          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black text-gray-800 mb-3">
+          <h2 className="text-[clamp(38px,7vw,68px)] font-black text-gray-800 mb-4 leading-[1.25]">
             やま接骨院での
             <br />
             <span className="text-[#e8520a]">治療の流れ</span>
           </h2>
-          <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[18px] text-gray-500 max-w-lg mx-auto">
+          <div className="w-14 h-1.5 bg-[#e8520a] rounded-full mx-auto mb-5" />
+          <p className="text-[19px] md:text-[21px] text-gray-500 max-w-lg mx-auto leading-relaxed">
             初めての方でも安心してご来院いただけるよう、来院からアフターフォローまで丁寧にご説明します。
           </p>
         </motion.div>
@@ -160,6 +177,7 @@ function StepItem({
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const StepIcon = step.Icon;
 
   return (
     <motion.div
@@ -178,9 +196,7 @@ function StepItem({
         {!isLast && (
           <motion.div
             className="w-0.5 flex-1 min-h-[48px]"
-            style={{
-              background: "linear-gradient(to bottom, #0e64ae, #e8f0fc)",
-            }}
+            style={{ background: "linear-gradient(to bottom, #0e64ae, #e8f0fc)" }}
             initial={{ scaleY: 0, originY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.35 }}
@@ -191,57 +207,60 @@ function StepItem({
       {/* Right: content card */}
       <div
         className={`flex-1 bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden ${
-          isLast ? "mb-0" : "mb-12"
+          isLast ? "mb-0" : "mb-14"
         } ml-4 sm:ml-6`}
       >
         {/* Step photo */}
         <motion.div
-          className="relative h-52 sm:h-64 w-full overflow-hidden"
+          className="relative h-56 sm:h-72 w-full overflow-hidden"
           initial={{ opacity: 0, scale: 1.04 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <Image
-            src={step.image}
-            alt={step.imageAlt}
-            fill
-            className="object-cover"
-          />
-          {/* Label overlay */}
+          <Image src={step.image} alt={step.imageAlt} fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-          <div className="absolute top-4 left-4">
-            <span className="inline-block bg-[#0e64ae] text-white text-[11px] font-bold px-3 py-1 rounded tracking-widest">
+          <div className="absolute top-5 left-5">
+            <span className="inline-block bg-[#0e64ae] text-white text-[12px] font-bold px-4 py-1.5 rounded tracking-widest">
               {step.label}
             </span>
           </div>
         </motion.div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8">
-          <h3 className="text-[26px] sm:text-[30px] font-black text-gray-800 mb-3">
-            {step.icon} {step.title}
-          </h3>
-          <p className="text-[18px] text-gray-500 leading-relaxed mb-6">
+        <div className="p-8 sm:p-10">
+          {/* Step title with icon */}
+          <div className="flex items-center gap-4 mb-5">
+            <div className="w-14 h-14 rounded-2xl bg-[#e8f0fc] flex items-center justify-center flex-shrink-0">
+              <StepIcon size={28} className="text-[#0e64ae]" strokeWidth={1.8} />
+            </div>
+            <h3 className="text-[26px] sm:text-[32px] font-black text-gray-800 leading-tight">
+              {step.title}
+            </h3>
+          </div>
+
+          <p className="text-[18px] md:text-[20px] text-gray-500 leading-relaxed mb-8">
             {step.desc}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {step.items.map((item, j) => (
-              <motion.div
-                key={j}
-                className="bg-[#e8f0fc] rounded-xl p-5"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.45, delay: 0.4 + j * 0.08 }}
-              >
-                <div className="text-[17px] font-bold text-[#0a4d84] mb-1.5">
-                  {item.icon} {item.title}
-                </div>
-                <div className="text-[16px] text-gray-600 leading-relaxed">
-                  {item.body}
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {step.items.map((item, j) => {
+              const ItemIcon = item.Icon;
+              return (
+                <motion.div
+                  key={j}
+                  className="bg-[#e8f0fc] rounded-xl p-6"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.45, delay: 0.4 + j * 0.08 }}
+                >
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <ItemIcon size={20} className="text-[#0e64ae] flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[17px] font-bold text-[#0a4d84]">{item.title}</span>
+                  </div>
+                  <p className="text-[16px] text-gray-600 leading-relaxed">{item.body}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

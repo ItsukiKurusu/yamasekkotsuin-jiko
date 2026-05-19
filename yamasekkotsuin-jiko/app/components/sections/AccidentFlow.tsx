@@ -63,7 +63,7 @@ export default function AccidentFlow() {
   const warningInView = useInView(warningRef, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-28 md:py-40">
       <div className="max-w-5xl mx-auto px-5">
         {/* Section header */}
         <motion.div
@@ -73,16 +73,16 @@ export default function AccidentFlow() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[15px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-3">
             After Accident
           </span>
-          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
+          <h2 className="text-[clamp(38px,7vw,68px)] font-black leading-[1.2] text-gray-800 mb-4">
             もしも事故に遭ってしまったら…
             <br />
             <span className="text-[#e8520a]">まずやること4ステップ</span>
           </h2>
-          <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[18px] text-gray-500 max-w-lg mx-auto">
+          <div className="w-14 h-1.5 bg-[#e8520a] rounded-full mx-auto mb-5" />
+          <p className="text-[19px] md:text-[21px] text-gray-500 max-w-lg mx-auto leading-relaxed">
             事故直後は混乱してしまいますが、落ち着いてこの手順で対応しましょう。
           </p>
         </motion.div>
@@ -116,10 +116,10 @@ export default function AccidentFlow() {
                     {step.highlight}
                   </span>
                 </div>
-                <div className="text-[20px] font-black text-gray-800 mb-2.5 leading-snug">
+                <div className="text-[24px] md:text-[26px] font-black text-gray-800 mb-3 leading-snug">
                   {step.title}
                 </div>
-                <div className="text-[17px] text-gray-500 leading-relaxed">
+                <div className="text-[18px] md:text-[19px] text-gray-500 leading-relaxed">
                   {step.body}
                 </div>
               </div>

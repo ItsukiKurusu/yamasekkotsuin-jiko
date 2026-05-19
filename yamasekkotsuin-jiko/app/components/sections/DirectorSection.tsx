@@ -24,13 +24,13 @@ export default function DirectorSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[13px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[15px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-3">
             Director
           </span>
-          <h2 className="text-[clamp(26px,5vw,40px)] font-black text-gray-800 mb-3">
+          <h2 className="text-[clamp(38px,7vw,68px)] font-black text-gray-800 mb-4 leading-[1.2]">
             院長からの<span className="text-[#e8520a]">ご挨拶</span>
           </h2>
-          <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto" />
+          <div className="w-14 h-1.5 bg-[#e8520a] rounded-full mx-auto" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-14 items-center">
@@ -94,7 +94,7 @@ export default function DirectorSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <blockquote className="text-[17px] text-gray-700 leading-[2] mb-8 relative pl-6 border-l-4 border-[#0e64ae]">
+            <blockquote className="text-[19px] md:text-[20px] text-gray-700 leading-[2] mb-8 relative pl-6 border-l-4 border-[#0e64ae]">
               交通事故は突然の出来事で、体だけでなく心にも大きな負担をかけます。事故直後は症状がなくても、数日後・数週間後に痛みや痺れが現れることも少なくありません。
               <br /><br />
               やま接骨院では、患者さまお一人おひとりの状態に向き合い、最短で回復できるオーダーメイドの治療計画をご提案します。保険手続きのサポートから弁護士との連携まで、回復への道のりを全力でサポートいたします。
@@ -105,7 +105,7 @@ export default function DirectorSection() {
               {credentials.map((c, i) => (
                 <motion.li
                   key={i}
-                  className="flex items-center gap-3 text-[15px] text-gray-700 font-medium"
+                  className="flex items-center gap-3 text-[18px] text-gray-700 font-medium"
                   initial={{ opacity: 0, x: 16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}

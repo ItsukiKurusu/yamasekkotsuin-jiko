@@ -70,7 +70,7 @@ export default function Points() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-24 bg-gray-50">
+    <section className="py-28 md:py-40 bg-gray-50">
       <div className="max-w-5xl mx-auto px-5">
         {/* Section header */}
         <motion.div
@@ -80,16 +80,16 @@ export default function Points() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-[14px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
+          <span className="inline-block text-[15px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-3">
             Our Points
           </span>
-          <h2 className="text-[clamp(30px,5.5vw,50px)] font-black leading-[1.35] text-gray-800 mb-3">
+          <h2 className="text-[clamp(38px,7vw,68px)] font-black leading-[1.2] text-gray-800 mb-4">
             やま接骨院が選ばれる
             <br />
             <span className="text-[#e8520a]">8つの理由</span>
           </h2>
-          <div className="w-12 h-1 bg-[#e8520a] rounded-full mx-auto mb-4" />
-          <p className="text-[18px] text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <div className="w-14 h-1.5 bg-[#e8520a] rounded-full mx-auto mb-5" />
+          <p className="text-[19px] md:text-[21px] text-gray-500 max-w-xl mx-auto leading-relaxed">
             交通事故による痛みや不調にお悩みの方へ。やま接骨院では、安心して治療に専念できる環境を整え、皆さまの早期回復を全力でサポートします。
           </p>
         </motion.div>
@@ -106,24 +106,24 @@ export default function Points() {
             <motion.div
               key={i}
               variants={item}
-              className={`bg-white rounded-2xl p-6 shadow-sm border-t-4 transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(0,0,0,0.1)] ${
+              className={`bg-white rounded-2xl p-8 shadow-sm border-t-4 transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(0,0,0,0.1)] ${
                 p.accent
                   ? "border-[#e8520a]"
                   : "border-[#0e64ae]"
               }`}
             >
-              <div className={`text-[11px] font-black tracking-widest mb-2 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
+              <div className={`text-[12px] font-black tracking-widest mb-3 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
                 POINT {p.num}
                 {p.accentLabel && (
-                  <span className="bg-[#e8520a] text-white text-[9px] font-bold px-2 py-0.5 rounded">
-                    ✨ {p.accentLabel}
+                  <span className="bg-[#e8520a] text-white text-[10px] font-bold px-2.5 py-0.5 rounded">
+                    {p.accentLabel}
                   </span>
                 )}
               </div>
-              <h3 className="text-[20px] font-black text-gray-800 mb-3 leading-snug">
+              <h3 className="text-[22px] md:text-[24px] font-black text-gray-800 mb-4 leading-snug">
                 {p.title}
               </h3>
-              <p className="text-[17px] text-gray-500 leading-relaxed">
+              <p className="text-[17px] md:text-[18px] text-gray-500 leading-relaxed">
                 {p.body}
               </p>
             </motion.div>

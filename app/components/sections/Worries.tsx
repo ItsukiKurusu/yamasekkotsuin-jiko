@@ -12,6 +12,7 @@ import {
   Compass,
   RefreshCw,
   CheckCircle2,
+  AlertTriangle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -150,8 +151,9 @@ export default function Worries() {
           transition={{ duration: 0.65, delay: 0.2 }}
           className="mt-12 bg-white border-2 border-[#e8520a] rounded-2xl p-8 md:p-10 max-w-2xl mx-auto"
         >
-          <h3 className="text-[17px] font-black text-[#e8520a] text-center mb-6">
-            ⚠️ 一つでも当てはまる方は、すぐにご相談ください
+          <h3 className="text-[17px] font-black text-[#e8520a] text-center mb-6 flex items-center justify-center gap-2">
+            <AlertTriangle size={18} className="flex-shrink-0" />
+            一つでも当てはまる方は、すぐにご相談ください
           </h3>
           <ul className="space-y-0">
             {checkItems.map((item, i) => (

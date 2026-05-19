@@ -2,12 +2,19 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ChevronRight, AlertTriangle } from "lucide-react";
+import { ChevronRight, AlertTriangle, Siren, Handshake, Phone, ClipboardList, type LucideIcon } from "lucide-react";
 
-const steps = [
+const steps: {
+  num: string;
+  Icon: LucideIcon;
+  highlight: string;
+  highlightColor: string;
+  title: string;
+  body: string;
+}[] = [
   {
     num: "1",
-    icon: "🚨",
+    Icon: Siren,
     highlight: "最優先",
     highlightColor: "bg-red-500",
     title: "警察に電話する",
@@ -15,7 +22,7 @@ const steps = [
   },
   {
     num: "2",
-    icon: "🤝",
+    Icon: Handshake,
     highlight: "その場で確認",
     highlightColor: "bg-[#e8520a]",
     title: "相手の情報を確認する",
@@ -23,7 +30,7 @@ const steps = [
   },
   {
     num: "3",
-    icon: "📞",
+    Icon: Phone,
     highlight: "当日OK",
     highlightColor: "bg-[#0e64ae]",
     title: "やま接骨院に連絡する",
@@ -31,7 +38,7 @@ const steps = [
   },
   {
     num: "4",
-    icon: "📋",
+    Icon: ClipboardList,
     highlight: "後日でもOK",
     highlightColor: "bg-gray-500",
     title: "保険会社に連絡する",
@@ -88,7 +95,9 @@ export default function AccidentFlow() {
                     <span className="text-xl leading-none">{step.num}</span>
                   </div>
 
-                  <div className="text-3xl mb-2">{step.icon}</div>
+                  <div className="w-12 h-12 mb-2 flex items-center justify-center bg-[#e8f0fc] rounded-2xl">
+                    <step.Icon size={24} className="text-[#0e64ae]" strokeWidth={1.8} />
+                  </div>
 
                   <span className={`inline-block ${step.highlightColor} text-white text-[11px] font-bold px-3 py-0.5 rounded mb-2`}>
                     {step.highlight}
@@ -139,7 +148,9 @@ export default function AccidentFlow() {
 
                 <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">{step.icon}</span>
+                    <div className="w-9 h-9 flex items-center justify-center bg-[#e8f0fc] rounded-xl flex-shrink-0">
+                      <step.Icon size={18} className="text-[#0e64ae]" strokeWidth={1.8} />
+                    </div>
                     <span className={`inline-block ${step.highlightColor} text-white text-[10px] font-bold px-2.5 py-0.5 rounded`}>
                       {step.highlight}
                     </span>

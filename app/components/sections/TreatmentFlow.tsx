@@ -3,6 +3,23 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import {
+  CalendarDays,
+  MessageSquare,
+  Sparkles,
+  BarChart2,
+  Phone,
+  FileText,
+  Search,
+  Scale,
+  ThumbsUp,
+  Zap,
+  Stethoscope,
+  Heart,
+  TrendingUp,
+  PersonStanding,
+  type LucideIcon,
+} from "lucide-react";
 import entranceImg from "../../public/entrance.jpg";
 import explainingImg from "../../public/explaining.jpg";
 import chiryouImg from "../../public/chiryou.jpg";
@@ -11,29 +28,29 @@ import counselingImg from "../../public/counseling.jpg";
 const steps: {
   num: string;
   label: string;
-  icon: string;
+  Icon: LucideIcon;
   title: string;
   desc: string;
   image: StaticImageData;
   imageAlt: string;
-  items: { icon: string; title: string; body: string }[];
+  items: { Icon: LucideIcon; title: string; body: string }[];
 }[] = [
   {
     num: "1",
     label: "STEP 01",
-    icon: "📅",
+    Icon: CalendarDays,
     title: "予約・受付",
     desc: "ご来院前にお電話またはLINEでご予約ください。交通事故専用の問診表をご記入いただき、お身体の状態や事故後の状況について詳しくお聞きします。",
     image: entranceImg,
     imageAlt: "やま接骨院 院内・受付",
     items: [
       {
-        icon: "📞",
+        Icon: Phone,
         title: "事前予約",
         body: "お電話またはLINEからご予約が可能です。当日予約もお気軽にご相談ください。",
       },
       {
-        icon: "📝",
+        Icon: FileText,
         title: "問診表の記入",
         body: "交通事故専用の問診表をご記入。事故状況やお身体の不調を詳しくお聞きします。",
       },
@@ -42,19 +59,19 @@ const steps: {
   {
     num: "2",
     label: "STEP 02",
-    icon: "💬",
+    Icon: MessageSquare,
     title: "問診・カウンセリング",
     desc: "事故後のお悩みを丁寧にお聞きし、損害保険会社との概要や必要書類についてのアドバイスも行います。必要に応じて弁護士のご紹介も可能です。",
     image: explainingImg,
     imageAlt: "丁寧なカウンセリングの様子",
     items: [
       {
-        icon: "🔍",
+        Icon: Search,
         title: "状況の把握",
         body: "事故当時から現在までの状況をしっかり確認。整形外科との同時通院の進め方もアドバイスします。",
       },
       {
-        icon: "⚖️",
+        Icon: Scale,
         title: "弁護士対応",
         body: "必要に応じて交通事故に強い弁護士をご紹介。書類作成や交渉のサポートを受けることができます。",
       },
@@ -63,29 +80,29 @@ const steps: {
   {
     num: "3",
     label: "STEP 03",
-    icon: "✨",
+    Icon: Sparkles,
     title: "交通事故特化治療",
     desc: "「安心」と「早期回復」を第一に考えた治療を提供します。患者さま一人ひとりに合わせたオーダーメイドの治療計画で、痛みや不調に最適なアプローチを行います。",
     image: chiryouImg,
     imageAlt: "交通事故特化治療の様子",
     items: [
       {
-        icon: "🙌",
+        Icon: ThumbsUp,
         title: "施術方法",
         body: "症状や事故の状況に合わせた治療計画を作成。痛みや不調に対して最適なアプローチを行います。",
       },
       {
-        icon: "⚡",
+        Icon: Zap,
         title: "電気療法（エレサス）",
         body: "直流治療器『エレサス』を使用。筋肉の緊張緩和・血流促進・炎症軽減・神経症状の改善に効果的です。",
       },
       {
-        icon: "👨‍⚕️",
+        Icon: Stethoscope,
         title: "事故に詳しい院長が対応",
         body: "専門知識を持った院長がサポート。交通事故後の悩みにわかりやすくご説明します。",
       },
       {
-        icon: "😌",
+        Icon: Heart,
         title: "痛みへの配慮",
         body: "痛みを極力抑えた施術で、安心してリラックスしながら治療を受けていただけます。",
       },
@@ -94,19 +111,19 @@ const steps: {
   {
     num: "4",
     label: "STEP 04",
-    icon: "📊",
+    Icon: BarChart2,
     title: "経過確認・アフターフォロー",
     desc: "毎施術ごとにお身体の状態を確認し、回復の進捗を細かくチェック。残りの痛みが改善するまでの期間や回復の見通しをしっかり説明します。",
     image: counselingImg,
     imageAlt: "アフターフォローの様子",
     items: [
       {
-        icon: "📈",
+        Icon: TrendingUp,
         title: "施術計画の見直し",
         body: "症状変化に合わせて施術計画を柔軟に見直します。より早期回復を目指した追加施術も提案可能です。",
       },
       {
-        icon: "🏃",
+        Icon: PersonStanding,
         title: "セルフケアの提案",
         body: "「痛みが出ないためには」「自分でできる改善方法」など、患者さまが必要な情報を余すことなくお伝えします。",
       },
@@ -218,8 +235,9 @@ function StepItem({
 
         {/* Content */}
         <div className="p-6 sm:p-8">
-          <h3 className="text-[20px] sm:text-2xl font-black text-gray-800 mb-3">
-            {step.icon} {step.title}
+          <h3 className="text-[20px] sm:text-2xl font-black text-gray-800 mb-3 flex items-center gap-2">
+            <step.Icon size={22} className="text-[#0e64ae] flex-shrink-0" strokeWidth={1.8} />
+            {step.title}
           </h3>
           <p className="text-[14px] text-gray-500 leading-relaxed mb-6">
             {step.desc}
@@ -234,8 +252,9 @@ function StepItem({
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.45, delay: 0.4 + j * 0.08 }}
               >
-                <div className="text-[13px] font-bold text-[#0a4d84] mb-1">
-                  {item.icon} {item.title}
+                <div className="flex items-center gap-1.5 text-[13px] font-bold text-[#0a4d84] mb-1">
+                  <item.Icon size={14} className="flex-shrink-0" strokeWidth={2} />
+                  {item.title}
                 </div>
                 <div className="text-[12px] text-gray-600 leading-relaxed">
                   {item.body}

@@ -68,11 +68,12 @@ export default function CtaSection() {
           {/* Phone number */}
           <motion.a
             href="tel:0540000000"
-            className="block text-[clamp(26px,5vw,38px)] font-black text-gray-800 hover:text-[#0e64ae] transition-colors duration-200 tracking-tight mb-2"
+            className="inline-flex items-center justify-center gap-3 text-[clamp(26px,5vw,38px)] font-black text-gray-800 hover:text-[#0e64ae] transition-colors duration-200 tracking-tight mb-2"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            📞 054-295-5595
+            <PhoneCall size={32} className="text-[#0e64ae] flex-shrink-0" strokeWidth={2} />
+            054-295-5595
           </motion.a>
 
           <p className="text-[12px] text-gray-400 mb-7">

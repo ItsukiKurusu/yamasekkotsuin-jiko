@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const points = [
   {
@@ -115,8 +116,9 @@ export default function Points() {
               <div className={`text-[11px] font-black tracking-widest mb-2 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
                 POINT {p.num}
                 {p.accentLabel && (
-                  <span className="bg-[#e8520a] text-white text-[9px] font-bold px-2 py-0.5 rounded">
-                    ✨ {p.accentLabel}
+                  <span className="inline-flex items-center gap-0.5 bg-[#e8520a] text-white text-[9px] font-bold px-2 py-0.5 rounded">
+                    <Sparkles size={9} />
+                    {p.accentLabel}
                   </span>
                 )}
               </div>

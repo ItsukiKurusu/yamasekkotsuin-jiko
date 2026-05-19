@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { PhoneCall } from "lucide-react";
 import { cn } from "@/app/lib/utils";
 
@@ -24,13 +25,26 @@ export default function Header() {
     >
       <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* ロゴ */}
-        <div className="leading-tight">
-          <span className="text-[#0e64ae] font-black text-lg tracking-tight">
-            やま接骨院
-          </span>
-          <span className="block text-[11px] text-gray-400 font-normal">
-            交通事故治療専門ページ
-          </span>
+        <div className="flex items-center">
+          {/* PC: 横型ロゴ */}
+          <Image
+            src="/logo-and-moji-yoko.jpg"
+            alt="やま接骨院"
+            width={164}
+            height={47}
+            className="hidden sm:block object-contain"
+            priority
+          />
+          {/* スマホ: 文字のみロゴ */}
+          <Image
+            src="/logo-moji.PNG"
+            alt="やま接骨院"
+            width={120}
+            height={36}
+            className="block sm:hidden object-contain"
+            priority
+            unoptimized
+          />
         </div>
 
         {/* 右側：電話 + ボタン */}

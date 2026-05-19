@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   description:
     "交通事故後の痛み・むち打ち・倦怠感はやま接骨院へ。自賠責保険適用で窓口負担0円。院長が直接施術し、保険手続きも丁寧にサポートします。",
   keywords: "交通事故,接骨院,むち打ち,自賠責保険,静岡,やま接骨院",
+  icons: {
+    icon: "/logo-mojinashi.PNG",
+    apple: "/logo-mojinashi.PNG",
+  },
 };
 
 export default function RootLayout({

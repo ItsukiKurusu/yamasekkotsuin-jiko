@@ -165,6 +165,18 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* ロゴマーク ウォーターマーク（PC右側） */}
+      <div className="absolute right-[-40px] bottom-[-20px] hidden md:block pointer-events-none select-none opacity-[0.08]">
+        <Image
+          src="/logo-mojinashi.PNG"
+          alt=""
+          width={420}
+          height={420}
+          className="object-contain"
+          unoptimized
+        />
+      </div>
+
       {/* Scroll cue */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/60"

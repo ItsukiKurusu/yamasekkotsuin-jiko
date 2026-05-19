@@ -53,8 +53,17 @@ export default function AccidentFlow() {
   const warningInView = useInView(warningRef, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-20 md:py-24">
-      <div className="max-w-5xl mx-auto px-5">
+    <section className="py-20 md:py-24 relative overflow-hidden">
+      {/* 透かしロゴ */}
+      <div
+        className="pointer-events-none select-none absolute -left-44 top-1/2 opacity-[0.05]"
+        style={{ transform: "translateY(-50%) rotate(-20deg)" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-mojinashi.PNG" alt="" width={660} height={660} />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto px-5">
         {/* Section header */}
         <motion.div
           className="text-center mb-14"

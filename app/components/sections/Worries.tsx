@@ -92,7 +92,7 @@ export default function Worries() {
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* 透かしロゴ */}
       <div
-        className="pointer-events-none select-none absolute -right-40 top-1/2 -translate-y-1/2 opacity-[0.06]"
+        className="pointer-events-none select-none absolute -left-40 top-1/2 opacity-[0.06]"
         style={{ transform: "translateY(-50%) rotate(-18deg)" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}

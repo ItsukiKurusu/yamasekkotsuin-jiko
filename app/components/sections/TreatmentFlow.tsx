@@ -133,8 +133,17 @@ const steps: {
 
 export default function TreatmentFlow() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="max-w-5xl mx-auto px-5">
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      {/* 透かしロゴ */}
+      <div
+        className="pointer-events-none select-none absolute -left-44 top-1/2 opacity-[0.05]"
+        style={{ transform: "translateY(-50%) rotate(-15deg)" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-mojinashi.PNG" alt="" width={660} height={660} />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto px-5">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 24 }}

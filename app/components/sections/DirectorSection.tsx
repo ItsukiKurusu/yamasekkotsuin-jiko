@@ -15,8 +15,17 @@ const credentials = [
 
 export default function DirectorSection() {
   return (
-    <section className="py-24 md:py-36 bg-gray-50 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-5">
+    <section className="py-24 md:py-36 bg-gray-50 overflow-hidden relative">
+      {/* 透かしロゴ */}
+      <div
+        className="pointer-events-none select-none absolute -right-44 top-1/2 opacity-[0.05]"
+        style={{ transform: "translateY(-50%) rotate(15deg)" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-mojinashi.PNG" alt="" width={680} height={680} />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto px-5">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 24 }}

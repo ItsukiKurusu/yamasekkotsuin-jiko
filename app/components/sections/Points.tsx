@@ -71,8 +71,17 @@ export default function Points() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-24 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-5">
+    <section className="py-20 md:py-24 bg-gray-50 relative overflow-hidden">
+      {/* 透かしロゴ */}
+      <div
+        className="pointer-events-none select-none absolute -right-44 bottom-0 opacity-[0.05]"
+        style={{ transform: "rotate(12deg)" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-mojinashi.PNG" alt="" width={640} height={640} />
+      </div>
+
+      <div className="relative z-10 max-w-5xl mx-auto px-5">
         {/* Section header */}
         <motion.div
           className="text-center mb-14"

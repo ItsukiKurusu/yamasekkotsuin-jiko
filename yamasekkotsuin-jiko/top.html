@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交通事故治療 | やま接骨院</title>
+  <meta name="description" content="交通事故後の痛み・むち打ち・倦怠感はやま接骨院へ。自賠責保険適用で窓口負担0円。院長が直接施術し、保険手続きも丁寧にサポートします。">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== COLOR VARIABLES ===== */
+    :root {
+      --green: #1a6f5a;
+      --green-dark: #134d3e;
+      --green-light: #e8f5f0;
+      --orange: #e8520a;
+      --orange-light: #fff3ee;
+      --yellow: #f5a623;
+      --gray-bg: #f7f8f6;
+      --gray-border: #e0e0e0;
+      --text: #2b2b2b;
+      --text-sub: #666;
+      --white: #fff;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 72px 0; }
+    .section--gray { background: var(--gray-bg); }
+    .section--green { background: var(--green); color: #fff; }
+    .section-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .section-title--white { color: #fff; }
+    .section-desc {
+      font-size: 15px;
+      color: var(--text-sub);
+      max-width: 680px;
+    }
+    .section-head { text-align: center; margin-bottom: 56px; }
+    .accent { color: var(--orange); }
+    .accent-green { color: var(--green); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      transition: all .2s;
+    }
+    .btn--primary {
+      background: var(--orange);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(232,82,10,.35);
+    }
+    .btn--primary:hover { background: #c4410a; transform: translateY(-2px); }
+    .btn--line {
+      background: #06c755;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(6,199,85,.35);
+    }
+    .btn--line:hover { background: #05b04b; transform: translateY(-2px); }
+    .btn--outline {
+      background: #fff;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+    .btn--outline:hover { background: var(--green); color: #fff; }
+    .tag {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+    }
+
+    /* ===== FIXED HEADER ===== */
+    #fixed-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 2px solid var(--green);
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,.1);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .header-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+    }
+    .header-logo span { font-size: 11px; display: block; color: var(--text-sub); font-weight: 400; }
+    .header-cta { display: flex; gap: 10px; align-items: center; }
+    .header-tel {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .header-tel small { font-size: 11px; font-weight: 400; display: block; color: var(--text-sub); }
+    @media (max-width: 600px) {
+      .header-tel { display: none; }
+      .header-logo { font-size: 15px; }
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      margin-top: 64px;
+      background: linear-gradient(135deg, rgba(13,74,56,0.82) 0%, rgba(26,111,90,0.72) 50%, rgba(34,139,110,0.68) 100%), url('hero.jpg') center center / cover no-repeat;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      letter-spacing: .06em;
+    }
+    .hero-title {
+      font-size: clamp(26px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .hero-title em {
+      font-style: normal;
+      color: #ffe066;
+    }
+    .hero-desc {
+      font-size: 16px;
+      opacity: .9;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .hero-badge-item {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge-item strong { color: #ffe066; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ===== WORRIES (お悩み) ===== */
+    .worries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .worry-card {
+      background: #fff;
+      border: 2px solid var(--gray-border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all .2s;
+      cursor: default;
+    }
+    .worry-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 20px rgba(26,111,90,.15);
+      transform: translateY(-3px);
+    }
+    .worry-icon { font-size: 36px; margin-bottom: 12px; }
+    .worry-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .worry-desc { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+
+    /* ===== CHECK LIST ===== */
+    .check-box {
+      background: #fff;
+      border: 2px solid var(--orange);
+      border-radius: 16px;
+      padding: 36px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .check-box h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--orange);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .check-list { list-style: none; }
+    .check-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .check-list li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-list li:last-child { border-bottom: none; }
+
+    /* ===== ACCIDENT FLOW ===== */
+    .flow-steps {
+      display: flex;
+      gap: 0;
+      position: relative;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flow-step {
+      flex: 1;
+      min-width: 200px;
+      max-width: 240px;
+      text-align: center;
+      position: relative;
+    }
+    .flow-step::after {
+      content: '▶';
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--green);
+      font-size: 20px;
+      z-index: 1;
+    }
+    .flow-step:last-child::after { display: none; }
+    .flow-num {
+      width: 52px; height: 52px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 14px rgba(26,111,90,.3);
+    }
+    .flow-icon { font-size: 32px; margin-bottom: 10px; }
+    .flow-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+    .flow-body { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+    .flow-highlight {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 700px) {
+      .flow-steps { flex-direction: column; align-items: center; }
+      .flow-step::after { content: '▼'; right: auto; top: auto; bottom: -20px; left: 50%; transform: translateX(-50%); }
+      .flow-step { margin-bottom: 36px; }
+    }
+
+    /* ===== POINTS ===== */
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .point-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 20px rgba(0,0,0,.07);
+      border-top: 4px solid var(--green);
+      transition: box-shadow .2s;
+    }
+    .point-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.12); }
+    .point-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+    .point-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .point-body { font-size: 14px; color: var(--text-sub); line-height: 1.8; }
+
+    /* ===== TREATMENT FLOW ===== */
+    .treatment-steps { display: flex; flex-direction: column; gap: 0; }
+    .treatment-step {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      position: relative;
+    }
+    .treatment-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 52px;
+      bottom: 0;
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--green), transparent);
+      transform: translateX(-50%);
+    }
+    .step-left {
+      width: 104px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+    .step-circle {
+      width: 64px; height: 64px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(26,111,90,.35);
+    }
+    .step-circle .step-n { font-size: 11px; letter-spacing: .06em; }
+    .step-circle .step-num { font-size: 20px; }
+    .step-right {
+      flex: 1;
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 28px 36px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.07);
+    }
+    .step-label { font-size: 12px; font-weight: 700; color: var(--green); letter-spacing: .1em; margin-bottom: 6px; }
+    .step-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 16px; }
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .step-item {
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .step-item-title { font-size: 14px; font-weight: 700; color: var(--green-dark); margin-bottom: 6px; }
+    .step-item-body { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+    @media (max-width: 600px) {
+      .step-left { width: 72px; }
+      .step-circle { width: 52px; height: 52px; }
+      .treatment-step::after { left: 36px; }
+      .step-right { padding: 20px 16px 28px; }
+    }
+
+    /* ===== FREE SECTION ===== */
+    .free-box {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      color: #fff;
+    }
+    .free-box .big { font-size: clamp(32px, 6vw, 52px); font-weight: 900; color: #ffe066; }
+    .free-box p { font-size: 16px; opacity: .9; margin: 12px 0 28px; }
+    @media (max-width: 600px) { .free-box { padding: 36px 20px; } }
+
+    /* ===== CTA SECTION ===== */
+    .cta-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 4px 32px rgba(0,0,0,.1);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .cta-sub { font-size: 15px; color: var(--text-sub); margin-bottom: 28px; }
+    .cta-tel { font-size: 32px; font-weight: 900; color: var(--text); margin-bottom: 4px; }
+    .cta-tel a { color: var(--text); }
+    .cta-hours { font-size: 13px; color: var(--text-sub); margin-bottom: 24px; }
+    .cta-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 600px) { .cta-box { padding: 32px 20px; } }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.8);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.7); }
+    footer a:hover { color: #fff; }
+    .footer-inner { max-width: 1040px; margin: 0 auto; }
+    .footer-logo { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      width: 48px; height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+    .divider--left { margin: 12px 0 0; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .section { padding: 52px 0; }
+      .points-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== STICKY BOTTOM CTA (mobile) ===== */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      display: flex;
+      z-index: 999;
+      box-shadow: 0 -2px 16px rgba(0,0,0,.15);
+    }
+    .sticky-cta a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .sticky-cta .s-tel { background: var(--green); }
+    .sticky-cta .s-line { background: #06c755; }
+    @media (min-width: 769px) { .sticky-cta { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- ===== FIXED HEADER ===== -->
+<header id="fixed-header">
+  <div class="header-inner">
+    <div class="header-logo">
+      やま接骨院
+      <span>交通事故治療専門ページ</span>
+    </div>
+    <div class="header-cta">
+      <div class="header-tel">
+        <small>交通事故専用ダイヤル</small>
+        <!-- 電話番号は実際の番号に差し替えてください -->
+        <a href="tel:0000000000">054-295-5595</a>
+      </div>
+      <a href="#cta" class="btn btn--primary" style="padding:10px 20px; font-size:13px;">無料相談</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">交通事故治療 専門対応</div>
+    <h1 class="hero-title">
+      交通事故後の<em>痛み・不調</em>、<br>
+      一人で抱え込まないでください。
+    </h1>
+    <p class="hero-desc">
+      事故直後の処置から、むち打ち・痺れ・倦怠感の治療、<br>
+      保険手続きのサポートまで。<br>
+      やま接骨院が、回復への道を全力でサポートします。
+    </p>
+    <div class="hero-badges">
+      <div class="hero-badge-item"><strong>窓口負担0円</strong>（自賠責保険適用）</div>
+      <div class="hero-badge-item"><strong>事故当日</strong>から受付可能</div>
+      <div class="hero-badge-item"><strong>院長</strong>が直接施術</div>
+      <div class="hero-badge-item"><strong>弁護士</strong>と連携</div>
+    </div>
+    <div class="hero-btns">
+      <!-- 電話番号・LINE URLは実際のものに差し替えてください -->
+      <a href="tel:0000000000" class="btn btn--primary">📞 今すぐ電話する</a>
+      <a href="https://line.me/R/ti/p/@688vrvtg" class="btn btn--line">💬 LINEで相談する（24時間）</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== こんなお悩みありませんか ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Worries</span>
+      <h2 class="section-title">こんなお悩み<span class="accent">ありませんか？</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin: 16px auto 0;">
+        交通事故後に現れる症状は多岐にわたります。「たいしたことない」と思って放置すると、後から症状が悪化するケースも。気になる症状がある方は、お早めにご相談ください。
+      </p>
+    </div>
+    <div class="worries-grid">
+      <div class="worry-card">
+        <div class="worry-icon">🤕</div>
+        <div class="worry-title">首・肩の痛み（むち打ち）</div>
+        <div class="worry-desc">事故後から首や肩が痛い、動かしにくいなどの症状</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">🤯</div>
+        <div class="worry-title">頭痛・めまい</div>
+        <div class="worry-desc">頭が重い、ぐるぐる回る感じが続いている</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">😫</div>
+        <div class="worry-title">腰の痛み</div>
+        <div class="worry-desc">腰に鈍い痛みや張りが続いている</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">⚡</div>
+        <div class="worry-title">手足の痺れ</div>
+        <div class="worry-desc">手や腕、足先にじんじんとした感覚がある</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">😴</div>
+        <div class="worry-title">全身の倦怠感</div>
+        <div class="worry-desc">事故後から体が重い、疲れが取れない</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">😰</div>
+        <div class="worry-title">保険・手続きの不安</div>
+        <div class="worry-desc">どこに連絡すればいいのか、費用はどうなるのか不安</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">🏥</div>
+        <div class="worry-title">どこへ行けばいいか迷っている</div>
+        <div class="worry-desc">病院と接骨院どちらに行けばいいかわからない</div>
+      </div>
+      <div class="worry-card">
+        <div class="worry-icon">🔄</div>
+        <div class="worry-title">他院で改善しない</div>
+        <div class="worry-desc">すでに通っているが症状が改善しない、転院を考えている</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <div class="check-box">
+        <h3>⚠️ 一つでも当てはまる方は、すぐにご相談ください</h3>
+        <ul class="check-list">
+          <li>事故直後は大丈夫だったが、翌日から痛みが出てきた</li>
+          <li>相手方の保険会社から治療を打ち切られそうで困っている</li>
+          <li>どの書類を提出すればいいかわからない</li>
+          <li>整形外科に行ったが「異常なし」と言われた</li>
+          <li>事故から時間が経っているが、まだ痛みや違和感が残っている</li>
+          <li>電気治療などで改善が見られない神経症状がある</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 費用負担0円 ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="free-box">
+      <p style="font-size: 16px; opacity: .9; margin-bottom: 8px;">自賠責保険が適用されるため</p>
+      <div class="big">窓口負担 0円</div>
+      <p>交通事故の場合、自賠責保険が適用されるため、患者様が治療費を直接ご負担いただく必要はありません。保険手続きの煩雑な書類作成も、経験豊富なスタッフが全力でサポートします。</p>
+      <a href="#cta" class="btn btn--primary">詳しく相談する（無料）</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 事故後の対応フロー ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">After Accident</span>
+      <h2 class="section-title">もしも事故に遭ってしまったら…<br><span class="accent">まずやること4ステップ</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin: 16px auto 0;">
+        事故直後は混乱してしまいますが、落ち着いてこの手順で対応しましょう。
+      </p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">STEP<br>1</div>
+        <div class="flow-icon">🚨</div>
+        <div class="flow-highlight">最優先</div>
+        <div class="flow-title">警察に電話する</div>
+        <div class="flow-body">事故が起きたらまず110番へ。物損・人身に関わらず必ず届け出が必要です。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP<br>2</div>
+        <div class="flow-icon">🤝</div>
+        <div class="flow-highlight">その場で確認</div>
+        <div class="flow-title">相手の情報を確認する</div>
+        <div class="flow-body">相手の氏名・連絡先・車のナンバー・保険会社情報を必ず記録してください。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP<br>3</div>
+        <div class="flow-icon">📞</div>
+        <div class="flow-highlight">当日OK</div>
+        <div class="flow-title">やま接骨院に連絡する</div>
+        <div class="flow-body">お体に異変を感じたらすぐにご連絡を。事故当日から受付・相談が可能です。</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">STEP<br>4</div>
+        <div class="flow-icon">📋</div>
+        <div class="flow-highlight">後日でもOK</div>
+        <div class="flow-title">保険会社に連絡する</div>
+        <div class="flow-body">ご自身の保険会社への連絡は後日でも可能です。書類のことは当院スタッフにご相談ください。</div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; text-align: center; background: var(--orange-light); border-radius: 12px; padding: 24px 20px;">
+      <p style="font-size: 15px; font-weight: 700; color: var(--orange);">⚠️ 「痛みがないから大丈夫」は危険です！</p>
+      <p style="font-size: 14px; color: var(--text-sub); margin-top: 8px;">
+        むち打ちなどの症状は、事故直後は痛みを感じないことがあります。数日後・数週間後に症状が現れるケースも多く、
+        放置すると慢性化・後遺症のリスクが高まります。<strong>事故に遭ったら症状がなくても必ず受診しましょう。</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7+1つのポイント ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Our Points</span>
+      <h2 class="section-title">やま接骨院が選ばれる<br><span class="accent">8つの理由</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin: 16px auto 0;">
+        交通事故による痛みや不調にお悩みの方へ。やま接骨院では、安心して治療に専念できる環境を整え、皆さまの早期回復を全力でサポートします。
+      </p>
+    </div>
+    <div class="points-grid">
+      <div class="point-card">
+        <div class="point-num">POINT 01</div>
+        <div class="point-title">丁寧な検査・診断・施術で<br>炎症期でも対応可能</div>
+        <div class="point-body">痛みや不調を解消するため、丁寧な検査とカウンセリングを行い、原因を徹底的に調べます。炎症期の患部に対しても独自のノウハウを用い、症状に合わせた対応が可能です。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 02</div>
+        <div class="point-title">交通事故の専門知識を持つ<br>院長が直接施術</div>
+        <div class="point-body">交通事故治療の専門知識と豊富な経験を持つ院長が施術を担当します。専門研修を経た知識で丁寧に対応し、最適な治療を提供します。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 03</div>
+        <div class="point-title">自賠責保険適用で<br>窓口負担0円</div>
+        <div class="point-body">国家資格を持つ柔道整復師が常駐。事故証明書が揃い、身体の痛みと事故の因果関係が認められる場合、自賠責保険が適用され窓口負担が0円となります。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 04</div>
+        <div class="point-title">整形外科との同時通院・<br>他院からの転院も可能</div>
+        <div class="point-body">「どの病院に行けばいいかわからない」というご相談にも対応。整形外科や病院との同時通院が可能で、他の接骨院からの転院もスムーズに行えます。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 05</div>
+        <div class="point-title">煩雑な手続きも<br>手厚くサポート</div>
+        <div class="point-body">交通事故に関する書類作成や保険会社とのやり取りなど、経験豊富なスタッフが全力でサポート。患者さまが治療に専念できる環境を整えます。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 06</div>
+        <div class="point-title">複雑な事故案件も<br>弁護士との連携で対応</div>
+        <div class="point-body">複雑な交通事故案件や法的トラブルにも対応可能。提携弁護士との連携により、適切な手続きとサポートを行います。</div>
+      </div>
+      <div class="point-card">
+        <div class="point-num">POINT 07</div>
+        <div class="point-title">圧倒的な施術実績と<br>オーダーメイドの治療計画</div>
+        <div class="point-body">多数の施術実績を持つ信頼の接骨院。患者さま一人ひとりの症状に合わせた施術形態で、オーダーメイドの治療計画を立てて早期回復を目指します。</div>
+      </div>
+      <div class="point-card" style="border-top-color: var(--orange);">
+        <div class="point-num" style="color: var(--orange);">POINT 08 ✨ 当院独自</div>
+        <div class="point-title">他院にない直流電気による施術<br>難しい神経症状にも対応</div>
+        <div class="point-body">やま接骨院では、直流電気治療器『エレサス』を使用。改善が難しい痺れや麻痺などの神経症状に対し、表層から深部組織まで丁寧にアプローチします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 治療の流れ ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Treatment Flow</span>
+      <h2 class="section-title">やま接骨院での<br><span class="accent">治療の流れ</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc" style="margin: 16px auto 0;">
+        初めての方でも安心してご来院いただけるよう、来院からアフターフォローまで丁寧にご説明します。
+      </p>
+    </div>
+    <div class="treatment-steps">
+
+      <!-- STEP 1 -->
+      <div class="treatment-step">
+        <div class="step-left">
+          <div class="step-circle">
+            <span class="step-n">STEP</span>
+            <span class="step-num">1</span>
+          </div>
+        </div>
+        <div class="step-right">
+          <div class="step-label">STEP 01</div>
+          <div class="step-title">📅 予約・受付</div>
+          <p style="font-size: 14px; color: var(--text-sub);">ご来院前にお電話またはLINEでご予約ください。交通事故専用の問診表をご記入いただき、お身体の状態や事故後の状況について詳しくお聞きします。</p>
+          <div class="step-grid">
+            <div class="step-item">
+              <div class="step-item-title">📞 事前予約</div>
+              <div class="step-item-body">お電話またはLINEからご予約が可能です。当日予約もお気軽にご相談ください。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">📝 問診表の記入</div>
+              <div class="step-item-body">交通事故専用の問診表をご記入。事故状況やお身体の不調を詳しくお聞きします。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="treatment-step">
+        <div class="step-left">
+          <div class="step-circle">
+            <span class="step-n">STEP</span>
+            <span class="step-num">2</span>
+          </div>
+        </div>
+        <div class="step-right">
+          <div class="step-label">STEP 02</div>
+          <div class="step-title">💬 問診・カウンセリング</div>
+          <p style="font-size: 14px; color: var(--text-sub);">事故後のお悩みを丁寧にお聞きし、損害保険会社との概要や必要書類についてのアドバイスも行います。必要に応じて弁護士のご紹介も可能です。</p>
+          <div class="step-grid">
+            <div class="step-item">
+              <div class="step-item-title">🔍 状況の把握</div>
+              <div class="step-item-body">事故当時から現在までの状況をしっかり確認。整形外科との同時通院の進め方もアドバイスします。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">⚖️ 弁護士対応</div>
+              <div class="step-item-body">必要に応じて交通事故に強い弁護士をご紹介。書類作成や交渉のサポートを受けることができます。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="treatment-step">
+        <div class="step-left">
+          <div class="step-circle">
+            <span class="step-n">STEP</span>
+            <span class="step-num">3</span>
+          </div>
+        </div>
+        <div class="step-right">
+          <div class="step-label">STEP 03</div>
+          <div class="step-title">✨ 交通事故特化治療</div>
+          <p style="font-size: 14px; color: var(--text-sub);">「安心」と「早期回復」を第一に考えた治療を提供します。患者さま一人ひとりに合わせたオーダーメイドの治療計画で、痛みや不調に最適なアプローチを行います。</p>
+          <div class="step-grid">
+            <div class="step-item">
+              <div class="step-item-title">🙌 施術方法</div>
+              <div class="step-item-body">症状や事故の状況に合わせた治療計画を作成。痛みや不調に対して最適なアプローチを行います。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">⚡ 電気療法（エレサス）</div>
+              <div class="step-item-body">直流治療器『エレサス』を使用。筋肉の緊張緩和・血流促進・炎症軽減・神経症状の改善に効果的です。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">👨‍⚕️ 事故に詳しい院長が対応</div>
+              <div class="step-item-body">専門知識を持った院長がサポート。交通事故後の悩みにわかりやすくご説明します。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">😌 痛みへの配慮</div>
+              <div class="step-item-body">痛みを極力抑えた施術で、安心してリラックスしながら治療を受けていただけます。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="treatment-step">
+        <div class="step-left">
+          <div class="step-circle">
+            <span class="step-n">STEP</span>
+            <span class="step-num">4</span>
+          </div>
+        </div>
+        <div class="step-right">
+          <div class="step-label">STEP 04</div>
+          <div class="step-title">📊 経過確認・アフターフォロー</div>
+          <p style="font-size: 14px; color: var(--text-sub);">毎施術ごとにお身体の状態を確認し、回復の進捗を細かくチェック。残りの痛みが改善するまでの期間や回復の見通しをしっかり説明します。</p>
+          <div class="step-grid">
+            <div class="step-item">
+              <div class="step-item-title">📈 施術計画の見直し</div>
+              <div class="step-item-body">症状変化に合わせて施術計画を柔軟に見直します。より早期回復を目指した追加施術も提案可能です。</div>
+            </div>
+            <div class="step-item">
+              <div class="step-item-title">🏃 セルフケアの提案</div>
+              <div class="step-item-body">「痛みが出ないためには」「自分でできる改善方法」など、患者さまが必要な情報を余すことなくお伝えします。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta" class="section section--green">
+  <div class="container">
+    <div class="cta-box">
+      <div class="tag">無料相談受付中</div>
+      <div class="cta-title" style="margin-top: 16px;">交通事故後の不調、<br>まずはお気軽にご相談ください</div>
+      <div class="cta-sub">お電話・LINEにてご相談・ご予約を受け付けています。<br>事故直後から受付可能。費用は一切かかりません。</div>
+      <!-- 電話番号は実際のものに差し替えてください -->
+      <div class="cta-tel"><a href="tel:0000000000">054-295-5595</a></div>
+      <div class="cta-hours">営業時間：平日 9:00〜20:00 ／ 土曜 9:00〜15:00　｜　定休日：日・祝・不定休</div>
+      <div class="cta-btns">
+        <a href="tel:0000000000" class="btn btn--primary">📞 電話で相談する</a>
+        <!-- LINE URLは実際のものに差し替えてください -->
+        <a href="https://line.me/R/ti/p/@688vrvtg" class="btn btn--line">💬 LINEで相談する（24時間）</a>
+        <a href="https://yama-sekkotsuin.jp/" class="btn btn--outline">🏥 院のトップページへ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">やま接骨院</div>
+    <p>〒420-0810 静岡県静岡市葵区上土1丁目17-4 エクセル千代田1-A</p>
+    <p style="margin-top:4px;">営業時間：平日 9:00〜20:00 ／ 土曜 9:00〜15:00　｜　定休日：日・祝・不定休</p>
+    <div class="footer-links">
+      <a href="https://yama-sekkotsuin.jp/">トップページ</a>
+      <a href="#">施術メニュー</a>
+      <a href="#">アクセス</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 12px; opacity: .6;">&copy; 2025 やま接骨院 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ===== STICKY BOTTOM CTA (mobile) ===== -->
+<div class="sticky-cta">
+  <!-- 電話番号は実際のものに差し替えてください -->
+  <a href="tel:0000000000" class="s-tel">📞 電話で相談</a>
+  <!-- LINE URLは実際のものに差し替えてください -->
+  <a href="https://line.me/R/ti/p/@688vrvtg" class="s-line">💬 LINEで相談</a>
+</div>
+
+</body>
+</html>

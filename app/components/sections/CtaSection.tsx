@@ -83,30 +83,32 @@ export default function CtaSection() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:0540000000"
-              className="inline-flex items-center justify-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(232,82,10,0.35)] text-[14px]"
-            >
-              <PhoneCall size={16} />
-              電話で相談する
-            </a>
-            <a
-              href="https://line.me/R/ti/p/@688vrvtg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(6,199,85,0.35)] text-[14px]"
-            >
-              <MessageCircle size={16} />
-              LINEで相談する（24時間）
-            </a>
+          <div className="flex flex-col gap-3 items-center">
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <a
+                href="tel:0540000000"
+                className="inline-flex items-center justify-center gap-2 bg-[#e8520a] hover:bg-[#c4410a] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(232,82,10,0.35)] text-[14px] whitespace-nowrap"
+              >
+                <PhoneCall size={16} className="flex-shrink-0" />
+                電話で相談する
+              </a>
+              <a
+                href="https://line.me/R/ti/p/@688vrvtg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#06c755] hover:bg-[#05b04b] text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(6,199,85,0.35)] text-[14px] whitespace-nowrap"
+              >
+                <MessageCircle size={16} className="flex-shrink-0" />
+                LINEで相談する（24時間）
+              </a>
+            </div>
             <a
               href="https://yama-sekkotsuin.jp/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#0e64ae] border-2 border-[#0e64ae] hover:bg-[#0e64ae] hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[14px]"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#0e64ae] border-2 border-[#0e64ae] hover:bg-[#0e64ae] hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 text-[14px] whitespace-nowrap"
             >
-              <ExternalLink size={15} />
+              <ExternalLink size={15} className="flex-shrink-0" />
               院のトップページへ
             </a>
           </div>

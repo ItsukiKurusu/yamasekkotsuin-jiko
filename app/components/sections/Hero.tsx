@@ -21,7 +21,7 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to top, rgba(7,45,92,0.88) 0%, rgba(7,45,92,0.3) 30%, transparent 55%)",
+          background: "linear-gradient(to top, rgba(7,45,92,0.7) 0%, rgba(7,45,92,0.2) 30%, transparent 55%), linear-gradient(to left, rgba(7,45,92,0.75) 0%, rgba(7,45,92,0.3) 35%, transparent 60%)",
         }}
       />
 
@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl mx-auto px-5 pb-10 flex flex-wrap gap-4"
+          className="max-w-5xl mx-auto px-5 pb-10 flex flex-wrap gap-4 justify-end"
         >
           <a
             href="tel:0540000000"
@@ -54,7 +54,7 @@ export default function Hero() {
 
       {/* Scroll cue */}
       <motion.div
-        className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-1 text-white/60"
+        className="absolute bottom-8 left-8 z-10 flex flex-col items-center gap-1 text-white/60"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >

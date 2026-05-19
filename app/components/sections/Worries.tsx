@@ -89,8 +89,22 @@ export default function Worries() {
   const checkInView = useInView(checkRef, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-24 md:py-32">
-      <div className="max-w-4xl mx-auto px-5">
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      {/* 透かしロゴ */}
+      <div
+        className="pointer-events-none select-none absolute -right-40 top-1/2 -translate-y-1/2 opacity-[0.06]"
+        style={{ transform: "translateY(-50%) rotate(-18deg)" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo-mojinashi.PNG"
+          alt=""
+          width={700}
+          height={700}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-5">
         {/* Section header */}
         <motion.div
           className="text-center mb-16"

@@ -84,7 +84,7 @@ export default function Points() {
           <span className="inline-block text-[12px] font-bold tracking-[0.18em] text-[#0e64ae] uppercase mb-2">
             Our Points
           </span>
-          <h2 className="text-[clamp(22px,4vw,32px)] font-black leading-[1.4] text-gray-800 mb-3">
+          <h2 className="text-[clamp(52px,9vw,96px)] font-black leading-[1.2] text-gray-800 mb-4">
             やま接骨院が選ばれる
             <br />
             <span className="text-[#e8520a]">8つの理由</span>
@@ -101,31 +101,31 @@ export default function Points() {
           variants={container}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
         >
           {points.map((p, i) => (
             <motion.div
               key={i}
               variants={item}
-              className={`bg-white rounded-2xl p-6 shadow-sm border-t-4 transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(0,0,0,0.1)] ${
+              className={`bg-white rounded-2xl p-10 shadow-sm border-t-4 transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(0,0,0,0.1)] ${
                 p.accent
                   ? "border-[#e8520a]"
                   : "border-[#0e64ae]"
               }`}
             >
-              <div className={`text-[11px] font-black tracking-widest mb-2 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
+              <div className={`text-[16px] font-black tracking-widest mb-4 flex items-center gap-2 ${p.accent ? "text-[#e8520a]" : "text-[#0e64ae]"}`}>
                 POINT {p.num}
                 {p.accentLabel && (
-                  <span className="inline-flex items-center gap-0.5 bg-[#e8520a] text-white text-[9px] font-bold px-2 py-0.5 rounded">
+                  <span className="inline-flex items-center gap-0.5 bg-[#e8520a] text-white text-[13px] font-bold px-3 py-1 rounded">
                     <Sparkles size={9} />
                     {p.accentLabel}
                   </span>
                 )}
               </div>
-              <h3 className="text-[15px] font-black text-gray-800 mb-3 leading-snug">
+              <h3 className="text-[26px] md:text-[30px] font-black text-gray-800 mb-5 leading-snug">
                 {p.title}
               </h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              <p className="text-[19px] md:text-[21px] text-gray-500 leading-relaxed">
                 {p.body}
               </p>
             </motion.div>

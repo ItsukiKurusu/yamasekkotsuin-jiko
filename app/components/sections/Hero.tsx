@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroImage from "../../public/hero.png";
+import heroImage from "../../public/hero2.png";
 import { motion } from "framer-motion";
 import { PhoneCall, MessageCircle } from "lucide-react";
 
